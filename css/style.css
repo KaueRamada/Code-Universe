@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.home{
+    width: 100%;
+    height: 100vh; 
+    background-color: red;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.team{
+    width: 100%;
+    height: 100vw;
+    background-color: aqua;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.content{
+    width: 100%;
+    height: 100vw;
+    background-color: blueviolet;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+footer{
+    width: 100%;
+    height: 50vw;
+    background-color: blue;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
