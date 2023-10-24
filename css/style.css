@@ -19,7 +19,7 @@ main{
     flex-direction: column;
 }
 
-.home{
+/* .home{
     width: 100%;
     height: 100vh; 
     background-color: red;
@@ -27,7 +27,7 @@ main{
     justify-content: center;
     display: flex;
     position: absolute;
-}
+} */
 
 .team{
     width: 100%;
@@ -36,6 +36,10 @@ main{
     align-items: center;
     justify-content: center;
     display: flex;
+}
+
+.caroselll{
+    position: absolute;
 }
 
 .content{
@@ -47,13 +51,23 @@ main{
     display: flex;
 }
 
-ul{
+#borda{
+
+}
+
+/* ul{
     margin-left: 50%;
 }
 
 li{
     margin-left: 13%;
+    color: white;
+} */
+
+.nav-link, .nav-link{
+    color: rgb(245, 245, 245);
 }
+
 
 footer{
     width: 100%;
