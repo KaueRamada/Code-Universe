@@ -7,7 +7,7 @@
 }
 
 .navv{
-    z-index: 1;
+    z-index: 2;
     margin-right: 5%;
     margin-top: -3%;
 }
@@ -51,9 +51,14 @@ main{
     display: flex;
 }
 
-#borda{
-
+.nav-item{
+    color: transparent;
 }
+
+.entrar:hover{
+    color: aquamarine;
+}
+
 
 /* ul{
     margin-left: 50%;
@@ -64,10 +69,16 @@ li{
     color: white;
 } */
 
+
+
 .nav-link, .nav-link{
     color: rgb(245, 245, 245);
 }
-
+button{
+    background-color: transparent;
+    border: 0;
+    color: rgb(245,245,245);
+}
 
 footer{
     width: 100%;
