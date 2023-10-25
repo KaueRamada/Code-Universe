@@ -7,7 +7,7 @@
 }
 
 .navv{
-    z-index: 2;
+    z-index: 1;
     margin-right: 5%;
     margin-top: -3%;
 }
@@ -19,23 +19,18 @@ main{
     flex-direction: column;
 }
 
-/* .home{
-    width: 100%;
-    height: 100vh; 
-    background-color: red;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    position: absolute;
-} */
-
 .team{
     width: 100%;
-    height: 100vw;
-    background-color: aqua;
+    height: 100vh;
+    background-image: url("../img/Equipe/Fundo/background.gif");
+    z-index: 9999;
+    background-size: cover;
+    background-attachment: fixed;
     align-items: center;
     justify-content: center;
     display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .caroselll{
@@ -44,7 +39,7 @@ main{
 
 .content{
     width: 100%;
-    height: 100vw;
+    height: 100vh;
     background-color: blueviolet;
     align-items: center;
     justify-content: center;
@@ -59,32 +54,84 @@ main{
     color: aquamarine;
 }
 
-
-/* ul{
-    margin-left: 50%;
+.row-1,
+.row-2{
+    display: flex;
 }
-
-li{
-    margin-left: 13%;
-    color: white;
-} */
-
-
 
 .nav-link, .nav-link{
     color: rgb(245, 245, 245);
 }
+
+.row-1 .programmers-group,
+.design-group,
+.search-group,
+.documentation-group {
+    z-index: 99;
+    width: 25vw;
+    height: 15vw;
+    border: 6px solid rgb(191, 230, 255);
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.row-1 .programmers-group {
+    background: url("../img/Equipe/grupo-programação.jpg") center/cover no-repeat; /* Defina a imagem de fundo */
+    box-shadow: 
+    inset 0 0 5px #0026ff,
+    inset 0 0 15px #0026ff,
+    inset 0 0 15px #0026ff,
+    0 0 5px #0026ff,
+    0 0 15px #0026ff,
+    0 0 15px #0026ff;
+}
+
+.row-1 .design-group {
+    background: url("../img/Equipe/grupo-programação.jpg") center/cover no-repeat; 
+    box-shadow: 
+    inset 0 0 5px #0026ff,
+    inset 0 0 15px #0026ff,
+    inset 0 0 15px #0026ff,
+    0 0 5px #0026ff,
+    0 0 15px #0026ff,
+    0 0 15px #0026ff;
+}
+
+.row-2 .search-group {
+    background: url("../img/Equipe/grupo-pesquisa.jpg") center/cover no-repeat; 
+    box-shadow: 
+    inset 0 0 5px #0026ff,
+    inset 0 0 15px #0026ff,
+    inset 0 0 15px #0026ff,
+    0 0 5px #0026ff,
+    0 0 15px #0026ff,
+    0 0 15px #0026ff;
+}
+
+.row-2 .documentation-group {
+    background: url("../img/Equipe/grupo-pesquisa.jpg") center/cover no-repeat; 
+    box-shadow: 
+    inset 0 0 5px #0026ff,
+    inset 0 0 15px #0026ff,
+    inset 0 0 15px #0026ff,
+    0 0 5px #0026ff,
+    0 0 15px #0026ff,
+    0 0 15px #0026ff;
+}
+
+footer{
+    width: 100%;
+    height: 100vh;
+    background-color: blue;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
 button{
     background-color: transparent;
     border: 0;
     color: rgb(245,245,245);
 }
 
-footer{
-    width: 100%;
-    height: 50vw;
-    background-color: blue;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
