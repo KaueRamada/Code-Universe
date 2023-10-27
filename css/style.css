@@ -10,6 +10,7 @@
     z-index: 1;
     margin-right: 5%;
     margin-top: -3%;
+    position: absolute
 }
 
 main{
@@ -34,7 +35,7 @@ main{
 }
 
 .caroselll{
-    position: absolute;
+
 }
 
 .content{
@@ -61,6 +62,11 @@ main{
 
 .nav-link, .nav-link{
     color: rgb(245, 245, 245);
+    font-size: 30px;
+}
+
+.botao-nav:hover{
+    background-color: black;
 }
 
 .row-1 .programmers-group,
