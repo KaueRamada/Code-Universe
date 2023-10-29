@@ -6,12 +6,6 @@
     box-sizing: border-box;
 }
 
-.navv{
-    z-index: 1;
-    margin-right: 5%;
-    margin-top: -3%;
-}
-
 main{
     width: 100%;
     height: 100%;
@@ -19,31 +13,15 @@ main{
     flex-direction: column;
 }
 
-.team{
-    width: 100%;
-    height: 100vh;
-    background-image: url("../img/Equipe/Fundo/background.gif");
-    z-index: 9999;
-    background-size: cover;
-    background-attachment: fixed;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
+/* NavBar */
 
-.caroselll{
-    position: absolute;
-}
-
-.content{
-    width: 100%;
-    height: 100vh;
-    background-color: blueviolet;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+.navbar-menu {
+    position: fixed;
+    top: -50px;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    transition: opacity 0.3s;
 }
 
 .nav-item{
@@ -52,6 +30,46 @@ main{
 
 .entrar:hover{
     color: aquamarine;
+}
+
+/* Carrossel */
+
+.carrossel{
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+}
+
+.carrossel img{
+    width: 100%;
+    height: 100vh;
+}
+
+.carousel-indicators button {
+    width: 10px !important;
+    height: 5px !important;
+}
+
+.carousel-indicators button.active {
+    width: 40px !important;
+}
+
+/* Section Equipe */
+
+.team{
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    height: 100vw;
+    position: absolute;
 }
 
 .row-1,
@@ -67,17 +85,20 @@ main{
 .design-group,
 .search-group,
 .documentation-group {
-    z-index: 99;
-    width: 25vw;
-    height: 15vw;
+    z-index: 4;
+    width: 30vw;
+    height: 18vw;
     border: 6px solid rgb(191, 230, 255);
     border-radius: 25px;
     overflow: hidden;
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .row-1 .programmers-group {
-    background: url("../img/Equipe/grupo-programação.jpg") center/cover no-repeat; /* Defina a imagem de fundo */
+    background: url("../img/Equipe/grupo-programação.jpg") center/cover no-repeat;
     box-shadow: 
     inset 0 0 5px #0026ff,
     inset 0 0 15px #0026ff,
@@ -86,6 +107,7 @@ main{
     0 0 15px #0026ff,
     0 0 15px #0026ff;
 }
+
 
 .row-1 .design-group {
     background: url("../img/Equipe/grupo-programação.jpg") center/cover no-repeat; 
@@ -110,7 +132,7 @@ main{
 }
 
 .row-2 .documentation-group {
-    background: url("../img/Equipe/grupo-pesquisa.jpg") center/cover no-repeat; 
+    background: url("../img/Equipe/grupo-documentacao.jpg") center/cover no-repeat; 
     box-shadow: 
     inset 0 0 5px #0026ff,
     inset 0 0 15px #0026ff,
@@ -118,6 +140,89 @@ main{
     0 0 5px #0026ff,
     0 0 15px #0026ff,
     0 0 15px #0026ff;
+}
+
+.row-img div{
+    text-align: center;
+}
+
+.row-img .text {
+    background-color: rgba(43, 43, 43, 0.8);
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    color: white;
+    font-size: 18px;
+    transition: height 0.4s ease;
+}
+
+.row-img div:hover .text{
+    padding: 60px;
+    height: 100%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row-img div:hover .text p{
+    height: 100%;
+    display: none;
+}
+
+.row-img div:hover .text span{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Section Conteúdo */
+.content{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.row-content-1,
+.row-content-2{
+    display: flex;
+}
+
+.row-content-1 div{
+    box-shadow: 
+    inset 0 0 5px #0026ff,
+    inset 0 0 15px #0026ff,
+    inset 0 0 15px #0026ff,
+    0 0 5px #0026ff,
+    0 0 15px #0026ff,
+    0 0 15px #0026ff;
+    border: 6px solid rgb(191, 230, 255);
+    margin: 15px;
+    width: 170px;
+    height: 170px;
+    border-radius: 100%;
+}
+
+.row-content-2 div{
+    box-shadow: 
+    inset 0 0 5px #0026ff,
+    inset 0 0 15px #0026ff,
+    inset 0 0 15px #0026ff,
+    0 0 5px #0026ff,
+    0 0 15px #0026ff,
+    0 0 15px #0026ff;
+    border: 6px solid rgb(191, 230, 255);
+    margin: 15px;
+    width: 170px;
+    height: 170px;
+    border-radius: 100%;
 }
 
 footer{
@@ -128,10 +233,3 @@ footer{
     justify-content: center;
     display: flex;
 }
-
-button{
-    background-color: transparent;
-    border: 0;
-    color: rgb(245,245,245);
-}
-

@@ -11,7 +11,7 @@
 <body>
     <main>
       <!-- NavBar -->
-      <!-- <section class="navv">
+      <!-- <header class="navbar-menu">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand " href="#">
@@ -44,61 +44,96 @@
           </div>
         </div>
       </nav>
-    </section> -->
+      </header> -->
+
 
     <!-- Carrosel -->
-    <!-- <div class="caroselll">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <section class="carrossel">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/Carrossel/carrossel01.png" class="d-block" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Carrossel/carrossel02.png" style="width: 98.75vw;" class="d-block" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Carrossel/carrossel03.png" style="width: 98.75vw;" class="d-block" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="img/Carrossel/carrossel01.png" style="width: 98.75vw;" class="d-block" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="img/Carrossel/carrossel02.png" style="width: 98.75vw;" class="d-block" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="img/Carrossel/carrossel03.png" style="width: 98.75vw;" class="d-block" alt="...">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-  </div>
-  </div> -->
+    </section>
 
+        <section class="team" id="team">
 
-        <section class="team">
-
+          <video autoplay loop muted>
+            <source src="img/Equipe/Fundo/19_10_2023, 16_32_59.mp4" type="video/mp4">
+          </video>
           <div class="row-img row-1">
-            <div class="programmers-group"></div>
-            <div class="design-group"></div>
+            <div alt="Programação" class="programmers-group">
+              <div class="text">
+                <p>Programação</p>
+                <span>Equipe responsável por toda a programação do site</span>
+              </div>
+            </div>
+            <div alt="Design" class="design-group">
+              <div class="text">
+                <p>Design</p>
+                <span>Equipe responsável pelo design do site</span>
+              </div>
+            </div>
+            </div>
           </div>
 
           <div class="row-img row-2">
-            <div class="search-group"></div>
-            <div class="documentation-group"></div>
+            <div alt="Pesquisa" class="search-group">
+              <div class="text">
+                <p>Pesquisa</p>
+                <span>Equipe responsável pelo conteúdo do site</span>
+              </div>
+            </div>
+            <div alt="Documentação" class="documentation-group">
+              <div class="text">
+                <p>Documentação</p>
+                <span>Equipe responsável pela documentação do trabalho</span>
+              </div>
+            </div>
           </div>
         </section>
 
         <section class="content">
-            <h1>Conteúdos - Kauã e Bahia</h1>
+            <div class="row-content-1">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="row-content-2">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
         </section>
 
         <footer>
             <h1>Só pra inventar moda</h1>
         </footer>
     </main>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
