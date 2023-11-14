@@ -1,0 +1,547 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* my color palette */
+:root {
+    --dark0: #000000;
+    --dark1: #393e41;
+    --light0: #ffffff;
+    --light1: #e7e5df;
+    --light2: #d3d0cb;
+    --blue1: #0075ba;
+    --blue2: #ccecff;
+    --blue3: #e0f4ff;
+    --blue4: #f5fbff;
+    --brown1: #be5a38;
+}
+
+body {
+    font-family: 'Segoe UI';
+    font-size: 16px;
+    color: var(--dark0);
+}
+
+/* login and signup pages */
+
+.register-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*p.form-message {
+    position: relative;
+    bottom: 10px;
+    margin: 20px 0;
+}*/
+
+.register-box {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    max-height: 95vh;
+    border: 1px solid var(--light1);
+    padding: 20px;
+    padding-top: 60px;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+.register-box .title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: var(--blue4);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--light1);
+}
+
+.register-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-box form label {
+    margin: 10px 0;
+}
+
+input,
+select {
+    height: 40px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    outline: none;
+    border: 1px solid var(--light2);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.register-box form .remember {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    margin: 10px 0 20px 0;
+}
+
+.register-box.login form .remember {
+    margin-bottom: 10px;
+}
+
+.register-box form .remember label {
+    margin: 0;
+    margin-bottom: 2px;
+}
+
+input[type="checkbox"] {
+    height: 16px;
+    margin: 0;
+    margin-right: 10px;
+}
+
+.register-box form input[type="file"] {
+    margin-bottom: 20px;
+}
+
+.change-register {
+    margin-bottom: 20px;
+}
+
+.register-box.signup .change-register {
+    margin-top: 10px;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    background-color: var(--blue1);
+    color: var(--light0);
+}
+
+/* control panel page */
+
+.panel-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    color: var(--dark1);
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+header {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 50px;
+    background-color: var(--blue1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3%;
+}
+
+header h3 {
+    color: var(--light0);
+    font-weight: 300;
+}
+
+/* desktop menu */
+header .menu {
+    display: flex;
+    height: 100%;
+}
+
+header ul {
+    position: relative;
+    display: flex;
+    height: 100%;
+}
+
+header ul.dropdown {
+    position: absolute;
+    top: 50px;
+    z-index: 999;
+    display: none;
+    flex-direction: column;
+    height: auto;
+}
+
+header ul.dropdown li {
+    background-color: var(--brown1);
+    height: 50px;
+}
+
+header ul li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 100%;
+    transition: .2s;
+}
+
+header ul li.action span {
+    width: 0px;
+    height: 0px;
+    border-top: 6px solid #fff;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    margin: 4px 20px 0px 10px;
+}
+
+header ul li:hover {
+    opacity: .9;
+}
+
+header a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    height: 100%;
+    padding: 0 20px;
+}
+
+header ul li.action > a {
+    padding: 0;
+    padding-left: 20px;
+}
+
+.main {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    background-color: var(--light1);
+    color: #000;
+    padding: 40px 3%;
+}
+
+.window {
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--light0);
+    padding: 40px;
+    min-height: calc(100vh - 50px - 40px - 40px);
+}
+
+/* dashboard */
+.dashboard {
+    display: flex;
+}
+
+.profile-info .profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-info .profile-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* action windows */
+.action-window {
+    display: none;
+}
+
+.action-window .title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.action-window form {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.action-window label {
+    margin-bottom: 10px;
+}
+
+.action-window form input,
+.action-window form textarea {
+    width: 95%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    border: 1px solid var(--light2);
+    border-radius: 5px;
+    outline: none;
+}
+
+.action-window form textarea {
+    max-width: 1200px;
+    height: 500px;
+    padding: 10px;
+    resize: none;
+}
+
+/* TinyMCE editor styles */
+.tox .tox-mbtn {
+    width: auto;
+}
+
+
+form input[type="file"] {
+    padding-top: 7px;
+}
+
+.action-window select {
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+.action-window .info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.action-window .info.last {
+    margin-bottom: 20px;
+}
+
+.action-window form .info-author {
+    margin-bottom: 20px;
+}
+
+.action-window form .info img,
+.action-window table .info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 2px;
+    margin-right: 10px;
+}
+
+/* file inputs and preview uploaded image */
+input[type="file"].hidden {
+    display: none;
+}
+
+.preview-image {
+    position: relative;
+    border: 1px solid var(--light2);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+label.image-label {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview-image.image {
+    width: 150px;
+    height: 70px;
+}
+
+.preview-image.thumbnail {
+    width: 95%;
+    max-width: 600px;
+    height: 300px;
+}
+
+.preview-image.profile_photo,
+.preview-image.profile_photo label.image-label {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.preview-image .preview-image-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.preview-image img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.preview-image.profile_photo img {
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.action-window .publish {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    margin: 10px 0 20px 0;
+}
+
+.action-window form input[type="submit"] {
+    width: 200px;
+    cursor: pointer;
+    margin-top: 10px;
+    border: none;
+}
+
+.action-window .submit-btns {
+    margin-top: 20px;
+}
+
+.action-window .submit-btns input {
+    width: 150px !important;
+    margin: 0 10px;
+    margin-bottom: 10px;
+    transition: .2s;
+}
+
+.action-window .submit-btns input:last-child {
+    background-color: var(--light0);
+    color: var(--dark0);
+}
+
+.action-window .submit-btns input:last-child:hover {
+    background-color: var(--blue2);
+}
+
+.action-window .actions {
+    max-width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: var(--blue3);
+    border-bottom: 2px solid var(--light0);
+}
+
+.action-window table {
+    display: none;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    border-collapse: collapse;
+}
+
+.action-window table input[type="checkbox"] {
+    margin: 0;
+}
+
+tr {
+    font-size: 16px;
+    transition: .2s;
+}
+
+tr:last-child td {
+    border-bottom: none !important;
+}
+
+tr:hover {
+    background-color: var(--blue4);
+}
+
+th, td {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-bottom: 2px solid var(--light0);
+    border-left: 2px solid var(--light0);
+    padding: 15px 20px;
+    text-align: left;
+    font-weight: 400;
+    text-align: center;
+}
+
+th {
+    background-color: var(--blue4);
+}
+
+th:first-child,
+td:first-child {
+    border-left: none;
+}
+
+td.photo {
+    padding: 0;
+    padding-top: 3px;
+}
+
+td.photo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+td.category.photo img {
+    width: auto;
+    min-width: 40px;
+    max-width: 80%;
+    border-radius: 0;
+}
+
+.action-btn {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.actions .action-btn {
+    border: none;
+}
+
+table tr .action-btn {
+    padding: 15px 20px;
+}
+
+.action-btn.delete {
+    padding-right: 20px;
+}
+
+.action-btn a {
+    color: #000;
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: .2s;
+}
+
+.action-btn a:hover {
+    background-color: var(--blue2);
+}
+
+.action-btn.delete a {
+    background-color: var(--blue1);
+    color: var(--light0);
+    border: 0;
+}
