@@ -75,6 +75,8 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
+      
+        <div class="admin" style="position:absolute;top:100px;z-index:99999;"><a href="admin/index.php">Painel</a></div>
       </section>
 
       <section class="team" id="team">
