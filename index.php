@@ -43,95 +43,115 @@
             
           </div>
         </div>
-      </nav>
+        </nav>
       </header> -->
 
 
-    <!-- Carrosel -->
-    <section class="carrossel">
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <!-- Carrosel -->
+      <section class="carrossel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="img/Carrossel/carrossel01.png" class="d-block" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="img/Carrossel/carrossel02.png" style="width: 98.75vw;" class="d-block" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="img/Carrossel/carrossel03.png" style="width: 98.75vw;" class="d-block" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="img/Carrossel/carrossel01.png" class="d-block" alt="...">
+      </section>
+
+      <section class="team" id="team">
+
+        <video autoplay loop muted>
+          <source src="img/Equipe/Fundo/19_10_2023, 16_32_59.mp4" type="video/mp4">
+        </video>
+        <div class="row-img row-1">
+          <div alt="Programação" class="programmers-group">
+            <div class="text">
+              <p>Programação</p>
+              <span>Equipe responsável por toda a programação do site</span>
+            </div>
           </div>
-          <div class="carousel-item">
-            <img src="img/Carrossel/carrossel02.png" style="width: 98.75vw;" class="d-block" alt="...">
+          <div alt="Design" class="design-group">
+            <div class="text">
+              <p>Design</p>
+              <span>Equipe responsável pelo design do site</span>
+            </div>
           </div>
-          <div class="carousel-item">
-            <img src="img/Carrossel/carrossel03.png" style="width: 98.75vw;" class="d-block" alt="...">
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </section>
 
-        <section class="team" id="team">
-
-          <video autoplay loop muted>
-            <source src="img/Equipe/Fundo/19_10_2023, 16_32_59.mp4" type="video/mp4">
-          </video>
-          <div class="row-img row-1">
-            <div alt="Programação" class="programmers-group">
-              <div class="text">
-                <p>Programação</p>
-                <span>Equipe responsável por toda a programação do site</span>
-              </div>
-            </div>
-            <div alt="Design" class="design-group">
-              <div class="text">
-                <p>Design</p>
-                <span>Equipe responsável pelo design do site</span>
-              </div>
-            </div>
+        <div class="row-img row-2">
+          <div alt="Pesquisa" class="search-group">
+            <div class="text">
+              <p>Pesquisa</p>
+              <span>Equipe responsável pelo conteúdo do site</span>
             </div>
           </div>
-
-          <div class="row-img row-2">
-            <div alt="Pesquisa" class="search-group">
-              <div class="text">
-                <p>Pesquisa</p>
-                <span>Equipe responsável pelo conteúdo do site</span>
-              </div>
-            </div>
-            <div alt="Documentação" class="documentation-group">
-              <div class="text">
-                <p>Documentação</p>
-                <span>Equipe responsável pela documentação do trabalho</span>
-              </div>
+          <div alt="Documentação" class="documentation-group">
+            <div class="text">
+              <p>Documentação</p>
+              <span>Equipe responsável pela documentação do trabalho</span>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="content">
-            <div class="row-content-1">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="row-content-2">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-        </section>
+      <section class="content">
+          <!-- <video autoplay loop muted>
+            <source src="img/Conteúdo/Fundo/fundo_com_icones.mp4" type="video/mp4">
+          </video> -->
 
-        <footer>
-            <h1>Só pra inventar moda</h1>
-        </footer>
+          <div class="row-content-1">
+            <div class="tec-html">
+              <span>HTML</span>
+            </div>
+            <div class="tec-css">
+              <span>CSS</span>
+            </div>
+            <div class="tec-js">
+              <span>JAVASCRIPT</span>
+            </div>
+            <div class="tec-php">
+              <span>PHP</span>
+            </div>
+          </div>
+          <div class="row-content-2">
+          <div class="tec-java">
+              <span>JAVA</span>
+            </div>
+            <div class="tec-python">
+              <span>PYTHON</span>
+            </div>
+            <div class="tec-sql">
+              <span>SQL</span>
+            </div>
+            <div class="tec-mod_dados">
+              <span>Modelagem de Dados</span>
+            </div>
+          </div>
+      </section>
+
+      <footer>
+          <h1>Só pra inventar moda</h1>
+      </footer>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/script.js"></script>

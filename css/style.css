@@ -225,6 +225,15 @@ video {
     border-radius: 100%;
 }
 
+.row-content-1 div, .row-content-2 div:hover span{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+
 footer{
     width: 100%;
     height: 100vh;
