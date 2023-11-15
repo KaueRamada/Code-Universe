@@ -75,15 +75,11 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-      
-        <div class="admin" style="position:absolute;top:100px;z-index:99999;"><a href="admin/index.php">Painel</a></div>
       </section>
 
       <section class="team" id="team">
+        <div class="team-video"></div>
 
-        <video autoplay loop muted>
-          <source src="img/Equipe/Fundo/19_10_2023, 16_32_59.mp4" type="video/mp4">
-        </video>
         <div class="row-img row-1">
           <div alt="Programação" class="programmers-group">
             <div class="text">
@@ -117,44 +113,97 @@
       </section>
 
       <section class="content">
-          <!-- <video autoplay loop muted>
-            <source src="img/Conteúdo/Fundo/fundo_com_icones.mp4" type="video/mp4">
-          </video> -->
+        <div class="content-video"></div>
 
-          <div class="row-content-1">
-            <div class="tec-html">
-              <span>HTML</span>
-            </div>
-            <div class="tec-css">
-              <span>CSS</span>
-            </div>
-            <div class="tec-js">
-              <span>JAVASCRIPT</span>
-            </div>
-            <div class="tec-php">
-              <span>PHP</span>
-            </div>
+        <div class="row-content-1">
+          <div class="tec-html">
+            <span class="span">HTML</span>
           </div>
-          <div class="row-content-2">
+          <div class="tec-css">
+            <span class="span">CSS</span>
+          </div>
+          <div class="tec-js">
+            <span class="span">JAVASCRIPT</span>
+          </div>
+          <div class="tec-php">
+            <span class="span">PHP</span>
+          </div>
+        </div>
+        <div class="row-content-2">
           <div class="tec-java">
-              <span>JAVA</span>
-            </div>
-            <div class="tec-python">
-              <span>PYTHON</span>
-            </div>
-            <div class="tec-sql">
-              <span>SQL</span>
-            </div>
-            <div class="tec-mod_dados">
-              <span>Modelagem de Dados</span>
-            </div>
+            <span class="span">JAVA</span>
           </div>
+          <div class="tec-python">
+            <span class="span">PYTHON</span>
+          </div>
+          <div class="tec-sql">
+            <span class="span">SQL</span>
+          </div>
+          <div class="tec-mod_dados">
+            <span class="span">MODELAGEM DE DADOS</span>
+          </div>
+        </div>
       </section>
-
-      <footer>
-          <h1>Só pra inventar moda</h1>
-      </footer>
     </main>
+
+    <footer id="footer">
+      <div class="footer-content">
+        <img src="img/logo.png" alt="" class="logo">
+
+        <ul class="footer-menu">
+          <p>Programação</p>
+          <li class="footer-menu-item">Anderson Rian</li>
+          <li class="footer-menu-item">Erick Araujo</li>
+          <li class="footer-menu-item">Gustavo Elia</li>
+          <li class="footer-menu-item">Juan</li>
+          <li class="footer-menu-item">Kauã Medeiro</li>
+          <li class="footer-menu-item">Kauã Yuuki</li>
+          <li class="footer-menu-item">Kauê Ramada</li>
+        </ul>
+
+        <ul class="footer-menu">
+          <p>Design</p>
+          <li class="footer-menu-item">Isabele</li>
+          <li class="footer-menu-item">Abner</li>
+        </ul>
+
+        <ul class="footer-menu">
+          <p>Pesquisa</p>
+          <li class="footer-menu-item">Andressa Ayumi</li>
+          <li class="footer-menu-item">Caique</li>
+          <li class="footer-menu-item">Geovana</li>
+          <li class="footer-menu-item">Gustavo Barone</li>
+          <li class="footer-menu-item">Jhennifer</li>
+          <li class="footer-menu-item">Luiza</li>
+          <li class="footer-menu-item">Igor</li>
+        </ul>
+
+        <ul class="footer-menu">
+          <p>Documentação</p>
+          <li class="footer-menu-item">Arthur Souza</li>
+          <li class="footer-menu-item">João Pedro</li>
+          <li class="footer-menu-item">Julia Beneddetti</li>
+          <li class="footer-menu-item">Luiz</li>
+        </ul>
+      </div>
+
+      <div class="footer-info">
+        <ul class="footer-info-items">
+          <li class="footer-info-item">Home</li>
+          <li class="footer-info-item">Equipe</li>
+          <li class="footer-info-item">Conteúdo</li>
+        </ul>
+
+        <div class="rights">
+          <div class="country">
+            <p>Brasil</p>
+            <img src="img/brazil.png" alt="" class="brazil-flag">
+          </div>
+          <p>&copy;ETEC São Mateus</p>
+        </div>
+      </div>
+    </footer>
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
