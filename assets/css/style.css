@@ -1,0 +1,196 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* my color palette */
+:root {
+    --dark0: #000000;
+    --dark1: #393e41;
+    --light0: #ffffff;
+    --light1: #e7e5df;
+    --light2: #d3d0cb;
+    --blue1: #0075ba;
+    --blue2: #ccecff;
+    --blue3: #e0f4ff;
+    --blue4: #f5fbff;
+    --brown1: #be5a38;
+}
+
+body {
+    font-family: 'Segoe UI';
+    font-size: 16px;
+    color: var(--dark0);
+}
+
+/* blog styles */
+
+header {
+    width: 100%;
+    height: 50px;
+    background-color: var(--blue1);
+    display: flex;
+    justify-content: center;
+}
+
+header .content {
+    width: 100%;
+    /* max-width: 1600px; */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 3%;
+}
+
+nav {
+    height: 100%;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+nav ul.profile {
+    padding: 0 20px;
+}
+
+nav ul.profile a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav .profile-photo {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+nav .profile-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+nav .profile-name {
+    margin-bottom: 2px;
+}
+
+nav ul li {
+    height: 70%;
+    border-radius: 5px;
+    list-style: none;
+    margin: 0 15px;
+    color: #000;
+    background-color: #dddddd44;
+    transition: .2s;
+}
+
+nav ul li:hover {
+    background-color: var(--dark1);
+}
+
+nav ul li:last-child {
+    margin: 0;
+}
+
+nav ul li a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light0);
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0px 15px;
+    padding-bottom: 2px;
+}
+
+/* posts */
+
+main {
+    width: 100%;
+    padding: 0 3%;
+}
+
+section.posts {
+    width: 100%;
+    background-color: #ddd;
+    padding: 30px 20px;
+}
+
+section.posts > .title {
+    font-weight: 600;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.posts-content {
+    width: 100%;
+    background-color: #ccc;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.posts-content .post {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: #bbb;
+}
+
+.posts-content .post .category {
+    position: absolute; 
+    top: 10px;
+    right: 10px;
+    background-color: #000;
+    color: #fff;
+}
+
+.posts-content .post .image {
+    width: 100%;
+    height: 150px;
+    background-color: red
+}
+
+.posts-content .post .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.posts-content .post .creation-date {
+    margin-top: 10px; 
+}
+
+.posts-content .post .title {
+    margin: 10px 0;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.posts-content .post .subtitle {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    white-space: pre-wrap;
+    background-color: yellow;
+}
+
+.posts-content .post .read-more {
+    position: absolute;
+    bottom: 0;
+}

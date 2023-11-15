@@ -17,7 +17,7 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js"></script> <!-- TinyMCE jQuery integration -->
     <script src="https://kit.fontawesome.com/52201d9086.js" crossorigin="anonymous"></script> <!-- font awesome icons -->
 
-    <title>Painel de Controle | My Blog</title>
+    <title>Painel de Controle | Code Universe</title>
 </head>
 <body>
     <?php
@@ -88,7 +88,7 @@
                         </ul>
                     </li>
                 <?php } ?>
-                    <li><a href="<?php echo INCLUDE_PATH; ?>">Blog</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>">Code Universe</a></li>
                     <li><a href="?logout">Sair</a></li>
                 </ul>
             </div>

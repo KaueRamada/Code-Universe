@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Paleta de cores */
+:root {
+    --dark0: #000000;
+    --dark1: #393E41;
+    --light0: #FFFFFF;
+    --light1: #E7E5DF;
+    --light2: #D3D0CB;
+    --color1: #014aad;
+    --color2: #c66be5;
+    --color3: #06002f;
+}
+
+body {
+    font-family: 'Segoe UI';
+    font-size: 16px;
+    color: var(--light0);
+}
+
+/* Inputs */
+.inputuser{
+    background: none;
+    border: none;
+    border-width: 2px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-style: solid;
+    border-image: linear-gradient(to right, var(--color1), var(--color2)) 1;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+#name:focus ~ .name,
+#name:valid ~ .name{
+    top: 50px;
+    font-size: 14px;
+}
+
+#user:focus ~ .user,
+#user:valid ~ .user{
+    top: 110px;
+    font-size: 14px;
+}
+
+#email:focus ~ .email,
+#email:valid ~ .email{
+    top: 170px;
+    font-size: 14px;
+}
+
+#password:focus ~ .password,
+#password:valid ~ .password{
+    top: 230px;
+    font-size: 14px;
+}
+
+.name{
+    position: absolute;
+    top: 65px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.user{
+    position: absolute;
+    top: 125px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.email{
+    position: absolute;
+    top: 185px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+
+.password{
+    position: absolute;
+    top: 245px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+/* login and signup pages */
+
+.register-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-right{
+    position: absolute;
+    right: 0;
+    background: linear-gradient(to right, var(--color1), var(--color2));
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-right img{
+    position: absolute;
+    top: 0;
+    width: 20vw;
+}
+
+.bg-left img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+}
+
+.register-box {
+    position: absolute;
+    background-color: var(--color3);
+    margin-top: 10%;
+    width: 75%;
+    padding: 20px;
+    padding-top: 60px;
+    border-radius: 30px;
+}
+
+p.form-message {
+    position: absolute;
+    top: -60px;
+    margin: 20px 0;
+}
+
+.title{
+    padding-top:20px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.register-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-box form label {
+    margin: 10px 0;
+}
+
+
+.change-register {
+    margin-bottom: 20px;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    font-size: 18px;
+    background: linear-gradient(to right, var(--color1) 10%, var(--color2) 50%, var(--color1) 90%);    
+    background-size: 200%;
+    color: var(--light0);
+    border: 0;
+    width: 30%;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+input[type="submit"]:hover{
+    background-position: 100%;
+    animation: gradient 4s linear infinite;
+    transform: scale(1.02);
+}
+
+input[type="submit"]:active{
+    transform: scale(0.97);
+}
+
+@keyframes gradient{
+    0% { 
+        background-position: 0% 0%; 
+    }
+    100% { 
+        background-position: 200% 0; }
+}
+
+.btn-submit{
+    text-align: center;
+}

@@ -1,3 +1,6 @@
+<?php
+    require_once 'config/config.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="imagex/png" href="img/???">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>assets/css/main-style.css"/>
     <title>Code Universe</title>
 </head>
 <body>
@@ -46,6 +49,27 @@
         </nav>
       </header> -->
 
+      <div class="navbar">
+        
+        <nav class="register">
+        <?php if(Panel::isLogged()) { ?>
+            <ul class="profile">
+                <a href="<?php echo INCLUDE_PATH_ADMIN; ?>">
+                    <div class="profile-photo">
+                        <img src="<?php echo INCLUDE_PATH_ADMIN.$_SESSION['myblog-profile-photo']; ?>" alt="Foto de perfil" />
+                    </div>
+                    <div class="profile-name"><?php echo $_SESSION['myblog-name']; ?></div>
+                </a>
+            </ul>
+        <?php } else { ?>
+            <ul class="register">
+                <li><a href="<?php echo INCLUDE_PATH_ADMIN; ?>login">Entrar</a></li>
+                <li><a href="<?php echo INCLUDE_PATH_ADMIN; ?>signup">Cadastrar</a></li>
+            </ul>
+        <?php } ?>
+        </nav>
+    </div>
+
 
       <!-- Carrosel -->
       <section class="carrossel">
@@ -57,13 +81,13 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="img/Carrossel/carrossel01.png" class="d-block" alt="...">
+              <img src="<?php echo INCLUDE_PATH; ?>assets/img/Carrossel/carrossel01.png" class="d-block" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="img/Carrossel/carrossel02.png" style="width: 98.75vw;" class="d-block" alt="...">
+              <img src="<?php echo INCLUDE_PATH; ?>assets/img/Carrossel/carrossel02.png" style="width: 98.75vw;" class="d-block" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="img/Carrossel/carrossel03.png" style="width: 98.75vw;" class="d-block" alt="...">
+              <img src="<?php echo INCLUDE_PATH; ?>assets/img/Carrossel/carrossel03.png" style="width: 98.75vw;" class="d-block" alt="...">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -153,9 +177,9 @@
         <ul class="footer-menu">
           <p>Programação</p>
           <li class="footer-menu-item">Anderson Rian</li>
-          <li class="footer-menu-item">Erick Araujo</li>
+          <li class="footer-menu-item">Erick Araújo</li>
           <li class="footer-menu-item">Gustavo Elia</li>
-          <li class="footer-menu-item">Juan</li>
+          <li class="footer-menu-item">Juan Vieira</li>
           <li class="footer-menu-item">Kauã Medeiro</li>
           <li class="footer-menu-item">Kauã Yuuki</li>
           <li class="footer-menu-item">Kauê Ramada</li>
@@ -163,27 +187,27 @@
 
         <ul class="footer-menu">
           <p>Design</p>
-          <li class="footer-menu-item">Isabele</li>
-          <li class="footer-menu-item">Abner</li>
+          <li class="footer-menu-item">Abner Procópio</li> 
+          <li class="footer-menu-item">Isabelle Oliveira</li>
         </ul>
 
         <ul class="footer-menu">
           <p>Pesquisa</p>
           <li class="footer-menu-item">Andressa Ayumi</li>
-          <li class="footer-menu-item">Caique</li>
-          <li class="footer-menu-item">Geovana</li>
+          <li class="footer-menu-item">Caique Barbosa</li>
+          <li class="footer-menu-item">Giovanna Christina</li>
           <li class="footer-menu-item">Gustavo Barone</li>
-          <li class="footer-menu-item">Jhennifer</li>
-          <li class="footer-menu-item">Luiza</li>
-          <li class="footer-menu-item">Igor</li>
+          <li class="footer-menu-item">Jhenifer Maday</li>
+          <li class="footer-menu-item">Luiza Fadelli</li>
+          <li class="footer-menu-item">Igor Alves</li>
         </ul>
 
         <ul class="footer-menu">
           <p>Documentação</p>
           <li class="footer-menu-item">Arthur Souza</li>
           <li class="footer-menu-item">João Pedro</li>
-          <li class="footer-menu-item">Julia Beneddetti</li>
-          <li class="footer-menu-item">Luiz</li>
+          <li class="footer-menu-item">Julia Benedetti</li>
+          <li class="footer-menu-item">Luiz Felipe</li>
         </ul>
       </div>
 

@@ -1,0 +1,25 @@
+/* my color palette */
+
+:root {
+    --dark0: #000000;
+    --dark1: #393e41;
+    --light0: #ffffff;
+    --light1: #f2f3f6;
+    --light2: #e7e5df;
+    --light3: #d3d0cb;
+    --blue1: #0075ba;
+    --blue2: #ccecff;
+    --blue3: #e0f4ff;
+    --blue4: #f5fbff;
+    --brown1: #be5a38;
+}
+
+/* standard body styles */
+
+body {
+    font-family: 'Segoe UI';
+    font-size: 16px;
+    color: var(--dark0);
+    margin: 0;
+    padding: 0;
+}

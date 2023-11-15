@@ -9,8 +9,9 @@
     --dark0: #000000;
     --dark1: #393e41;
     --light0: #ffffff;
-    --light1: #e7e5df;
-    --light2: #d3d0cb;
+    --light1: #f2f3f6;
+    --light2: #e7e5df;
+    --light3: #d3d0cb;
     --blue1: #0075ba;
     --blue2: #ccecff;
     --blue3: #e0f4ff;
@@ -226,7 +227,7 @@ header ul li.action > a {
     position: absolute;
     top: 50px;
     width: 100%;
-    min-height: calc(100vh - 70px);
+    min-height: calc(100vh - 50px);
     background-color: var(--light1);
     color: #000;
     padding: 40px 3%;
@@ -238,6 +239,8 @@ header ul li.action > a {
     background-color: var(--light0);
     padding: 40px;
     min-height: calc(100vh - 50px - 40px - 40px);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 2px #eee;
 }
 
 /* dashboard */
@@ -302,7 +305,7 @@ header ul li.action > a {
 
 /* TinyMCE editor styles */
 .tox .tox-mbtn {
-    width: auto;
+    padding: 0 10px;
 }
 
 
