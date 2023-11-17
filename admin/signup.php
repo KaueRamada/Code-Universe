@@ -7,8 +7,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="<?php echo INCLUDE_PATH_ADMIN; ?>assets/css/style.css" rel="stylesheet">
-    <title>Cadastre-se | My Blog</title>
+    <link href="<?php echo INCLUDE_PATH_ADMIN; ?>assets/css/signup-style.css" rel="stylesheet">
+    <title>Cadastre-se | Code Universe</title>
 </head>
 <body>
     <!-- include path --> 
@@ -16,31 +16,37 @@
 
     <!-- signup container -->
     <div class="register-container">
-        <div class="register-box signup">
+        <div class="bg-right">
+            <img src="assets/img/logo_sem_fundo.png">
+            <div class="register-box signup">
             <p class="form-message"></p>
             <div class="title">
                 <h3>Cadastre-se</h3>
             </div>
             <form action="" method="post" enctype="multipart/form-data" class="add">
-                <label for="user">Usuário</label>
-                <input type="text" name="user" id="user" autofocus required />
 
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" required />
+            <input type="text" class="inputuser" name="name" id="name" required />
+                    <label for="name" class="name">Nome</label>
 
-                <label for="password">Senha</label>
-                <input type="password" name="password" id="password" required />
+                    <input type="text"  class="inputuser" name="user" id="user" required />
+                    <label for="user" class="user">Usuário</label>
 
-                <label for="name">Nome</label>
-                <input type="text" name="name" id="name" required />
+                    <input type="email" class="inputuser" name="email" id="email" required />
+                    <label for="email" class="email">Email</label>
 
-                <div class="change-register">Já tem uma conta? <a href="<?php echo INCLUDE_PATH_ADMIN; ?>login">Entre</a></div>
+                    <input type="password" class="inputuser" name="password" id="password" required />
+                    <label for="password" class="password">Senha</label>
+
+                <div class="change-register">Já tem uma conta? <a href="<?php echo INCLUDE_PATH_ADMIN; ?>login">Entrar</a></div>
 
                 <input type="hidden" name="signup" value="true" />
                 <input type="hidden" name="form_name" value="user" />
-                <input type="submit" name="register" value="Login" />
+                <input type="submit" name="register" value="Cadastrar" />
             </form>
         </div>
+    </div>
+    <div class="bg-left">
+        <img src="assets\img\fundo_cadastro.png">
     </div>
 
     
