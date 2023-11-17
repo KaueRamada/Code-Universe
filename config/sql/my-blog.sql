@@ -65,12 +65,15 @@ CREATE TABLE IF NOT EXISTS `tb_categories` (
 -- Extraindo dados da tabela `tb_categories`
 --
 
-INSERT INTO `tb_categories` (`id`, `name`, `image`) VALUES
-(1, 'html', 'assets/uploads/luto elvis.png'),
-(2, 'css', 'assets/uploads/luto elvis.png'),
-(3, 'html', 'assets/uploads/logo html.png'),
-(4, 'javascript', 'assets/uploads/js logo.png'),
-(5, 'php', 'assets/uploads/PHP-logo.png');
+INSERT INTO `tb_categories` (`id`, `name`, `image`, `creation_date`) VALUES
+(1, 'HTML', 'assets/img/logos-linguagens/html.png', '0000-00-00 00:00:00'),
+(2, 'CSS', 'assets/img/logos-linguagens/css.png', '0000-00-00 00:00:00'),
+(3, 'JAVASCRIPT', 'assets/img/logos-linguagens/javascript.png', '0000-00-00 00:00:00'),
+(4, 'PHP', 'assets/img/logos-linguagens/php.png', '0000-00-00 00:00:00'),
+(5, 'JAVA', 'assets/img/logos-linguagens/java.png', '0000-00-00 00:00:00'),
+(6, 'PYTHON', 'assets/img/logos-linguagens/python.png', '0000-00-00 00:00:00'),
+(7, 'SQL', 'assets/img/logos-linguagens/sql.png', '0000-00-00 00:00:00'),
+(8, 'MODELAGEM DE DADOS', 'assets/img/logos-linguagens/modelagem_de_dados.png', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 

@@ -7,8 +7,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="<?php echo INCLUDE_PATH_ADMIN; ?>assets/css/style.css" rel="stylesheet">
-    <title>Entre | My Blog</title>
+    <link href="<?php echo INCLUDE_PATH_ADMIN; ?>assets/css/login-style.css" rel="stylesheet">
+    <title>Acesse sua conta | Code Universe</title>
 </head>
 <body>
     <?php
@@ -58,16 +58,19 @@
                 <h3>Entre</h3>
             </div>
             <form action="" method="post">
-                <label for="user">Usuário ou email</label>
-                <input type="text" name="user" id="user" autofocus required />
-                <label for="password">Senha</label>
-                <input type="password" name="password" id="password" required />
+            <input type="text" name="user" class="inputuser" id="user" required />
+                <label for="user" class="user">Usuário ou email</label>
+
+                
+                <input type="password" name="password" class="inputuser" id="password" required />
+                <label for="password" class="password">Senha</label>
+
                 <div class="remember">
                     <input type="checkbox" name="remember" id="remember" />
                     <label for="remember">Lembrar Senha</label>
                 </div>
                 <div class="change-register">Não tem uma conta? <a href="<?php echo INCLUDE_PATH_ADMIN; ?>signup">Cadastre-se</a></div>
-                <input type="submit" name="register" value="Login" />
+                <input type="submit" name="register" value="Entrar" />
             </form>
         </div>
     </div>

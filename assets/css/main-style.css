@@ -199,9 +199,7 @@ main{
     z-index: 2;
     width: 100%;
     height: 100vh;
-    background-image: url("../img/Conteúdo/Fundo/fundo_com_icones.gif");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background: url("../img/Conteúdo/Fundo/fundo_com_icones.gif") center/cover no-repeat;
     position: absolute;
 }
 
