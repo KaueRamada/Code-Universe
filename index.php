@@ -139,33 +139,49 @@
       <section class="content">
         <div class="content-video"></div>
 
-        <div class="row-content-1">
-          <div class="tec-html">
+        <div class="categories">
+          <?php
+            $sql = $pdo->prepare("SELECT * FROM tb_categories");
+            $sql->execute();
+            if($sql->rowCount() == 0) {
+              echo "Nenhuma categoria cadastrada";
+            } else {
+              $categories = $sql->fetchAll(PDO::FETCH_ASSOC);
+              foreach($categories as $key => $value) {
+                echo '
+                <div class="tec tec-css">
+                  <span class="span">'.$value['name'].'</span>
+                  <img src="'.INCLUDE_PATH_ADMIN.$value['image'].'" alt="Logo" />
+                </div>
+                ';
+              }
+            }
+          ?>
+
+          <!-- <div class="tec tec-html">
             <span class="span">HTML</span>
           </div>
-          <div class="tec-css">
+          <div class="tec tec-css">
             <span class="span">CSS</span>
           </div>
-          <div class="tec-js">
+          <div class="tec tec-js">
             <span class="span">JAVASCRIPT</span>
           </div>
-          <div class="tec-php">
+          <div class="tec tec-php">
             <span class="span">PHP</span>
           </div>
-        </div>
-        <div class="row-content-2">
-          <div class="tec-java">
+          <div class="tec tec-java">
             <span class="span">JAVA</span>
           </div>
-          <div class="tec-python">
+          <div class="tec tec-python">
             <span class="span">PYTHON</span>
           </div>
-          <div class="tec-sql">
+          <div class="tec tec-sql">
             <span class="span">SQL</span>
           </div>
-          <div class="tec-mod_dados">
+          <div class="tec tec-mod_dados">
             <span class="span">MODELAGEM DE DADOS</span>
-          </div>
+          </div> -->
         </div>
       </section>
     </main>
