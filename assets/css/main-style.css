@@ -32,6 +32,13 @@ main{
     color: aquamarine;
 }
 
+/* temporário */
+.navbar img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
 /* Carrossel */
 
 .carrossel{
@@ -183,7 +190,7 @@ main{
 }
 
 /* Section Conteúdo */
-.content{
+section.content {
     width: 100%;
     height: 100vh;
     display: flex;
