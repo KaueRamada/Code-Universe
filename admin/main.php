@@ -107,11 +107,14 @@
                 </div>
             </div>
 
+            <div class="container">
             <div class="window action-window">
+                <img class="logo" src="assets/img/logo_sem_fundo.png">
                 <div class="title"></div>
                 <form action="" method="post" enctype="multipart/form-data"></form>
                 <div class="actions"></div>
                 <table></table>
+            </div>
             </div>
         </div>
     </div>
