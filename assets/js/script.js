@@ -6,4 +6,10 @@ $(function() {
     $('.posts-content .post').on('click', function() {
         $(this).find('a')[0].click();
     })
+
+
+    // redirect to posts when clicking on a category
+    $('.tec').click(function() {
+        
+    })
 })
