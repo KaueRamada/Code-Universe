@@ -6,12 +6,14 @@
     padding: 0;
 }
 
-/* posts cards */
-
-main {
-    width: 100%;
-    padding: 0 3%;
+/* temporário */
+header img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
 }
+
+/* posts cards */
 
 section.posts {
     width: 100%;
