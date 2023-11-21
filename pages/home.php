@@ -1,60 +1,71 @@
 <main>
-  <!-- NavBar -->
-  <!-- <header class="navbar-menu">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand " href="#">
-        <img src="img/Logo/logo_sem_fundo.png" alt="Code Universe" width="360">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul id="borda" class="navbar-nav border" style="margin-left: 200px;">
-          <li class="nav-item mx-5 active">
-            <a class="nav-link" aria-current="page" href="#">HOME</a>
+<nav class="navbar">
+      <img onClick="restart();" class="logo" src="<?php echo INCLUDE_PATH; ?>assets/img/logo_sem_fundo.png" />
+      <ul class="nav-itens">
+        <div class="content-itens">
+          <li><a href="#">HOME</a></li>
+          <li><a href="#team">EQUIPE</a></li>
+          <li><a href="#content">CONTEÚDO</a>
+            <ul class="dropdown">
+              <div>
+                <a href="posts?category=HTML">HTML</a>
+              </div>
+              <div>
+                <a href="posts?category=CSS">CSS</a>
+              </div>
+              <div>
+                <a href="posts?category=JAVASCRIPT">JAVA SCRIPT</a>
+              </div>
+              <div>
+              <a href="posts?category=PHP">PHP</a>
+              </div>
+              <div>
+              <a href="posts?category=JAVA">JAVA</a>
+              </div>
+              <div>
+              <a href="posts?category=PYTHON">PYTHON</a>
+              </div>
+              <div>
+              <a href="posts?category=SQL">SQL</a>
+              </div>
+              <div>
+              <a href="posts?category=MODELAGEM DE DADOS">MODELAGEM DE DADOS</a>
+              </div>
+              <ul>
           </li>
-          <li class="nav-item mx-5">
-            <a class="nav-link" href="#">EQUIPE</a>
-          </li>
-          <li class="nav-item mx-5">
-            <a id="entrar" class="nav-link" href="#">CONTEÚDO       </a>
-          </li>
-        
-          <li class="nav-item mx-5 border-left">
-            <a  class="nav-link" href="#"><button>ENTRAR</button></a>
-          </li>
-        </ul>
+        </div>
 
-        <li class="nav-item mx-4 border-left" style="margin-top: -2.8%;">
-          <a  class="nav-link" href="#"><button class="entrar">ENTRAR</button></a>
-        </li> 
-        
-      </div>
-    </div>
-    </nav>
-  </header> -->
-
-  <div class="navbar">
-    
-    <nav class="register">
-    <?php if(Panel::isLogged()) { ?>
-        <ul class="profile">
-            <a href="<?php echo INCLUDE_PATH_ADMIN; ?>">
+        <nav id="navigation" class="register">
+          <?php if (Panel::isLogged()) { ?>
+            <ul class="profile">
+              <a href="<?php echo INCLUDE_PATH_ADMIN; ?>">
                 <div class="profile-photo">
-                    <img src="<?php echo INCLUDE_PATH_ADMIN.$_SESSION['myblog-profile-photo']; ?>" alt="Foto de perfil" />
+                  <img src="<?php echo INCLUDE_PATH_ADMIN . $_SESSION['myblog-profile-photo']; ?>" alt="Foto de perfil" />
                 </div>
-                <div class="profile-name"><?php echo $_SESSION['myblog-name']; ?></div>
-            </a>
-        </ul>
-    <?php } else { ?>
-        <ul class="register">
-            <li><a href="<?php echo INCLUDE_PATH_ADMIN; ?>login">Entrar</a></li>
-            <li><a href="<?php echo INCLUDE_PATH_ADMIN; ?>signup">Cadastrar</a></li>
-        </ul>
-    <?php } ?>
+                <div class="profile-name">
+                  <?php echo $_SESSION['myblog-name']; ?>
+                </div>
+              </a>
+            </ul>
+          <?php } else { ?>
+            <li class="menu-register not-logged-in">
+              <div class="entrar"><a href="">ENTRAR</a></div>
+              <ul class="dropdown">
+                <li>
+                  <div><a href="<?php echo INCLUDE_PATH_ADMIN; ?>login">ENTRAR</a>
+                </li>
+                </div>
+                <li>
+                  <div><a href="<?php echo INCLUDE_PATH_ADMIN; ?>signup">CADASTRAR</a>
+                </li>
+                </div>
+              </ul>
+
+            </li>
+          <?php } ?>
+        </nav>
+      </ul>
     </nav>
-  </div>
 
 
   <!-- Carrosel -->
@@ -90,6 +101,7 @@
   <section class="team" id="team">
     <div class="team-video"></div>
 
+    <div class="rows">
     <div class="row-img row-1">
       <div alt="Programação" class="programmers-group">
         <div class="text">
@@ -120,9 +132,10 @@
         </div>
       </div>
     </div>
+    </div>
   </section>
 
-  <section class="content">
+  <section class="content" id="content">
     <div class="content-video"></div>
 
     <div class="categories">
@@ -139,7 +152,7 @@
             <div class="tec '.$category.'">
               <a href="posts?category='.$category.'">
                 <span class="span">'.$value['name'].'</span>
-                <img src="'.INCLUDE_PATH_ADMIN.$value['image'].'" alt="Logo" />
+                <img src="'.INCLUDE_PATH.$value['image'].'" alt="Logo" />
               </a>
             </div>
             ';
@@ -147,7 +160,9 @@
         }
     ?>
 
-      <!-- <div class="tec tec-html">
+      <!--
+      <div class="rows">  
+      <div class="tec tec-html">
         <span class="span">HTML</span>
       </div>
       <div class="tec tec-css">
@@ -170,6 +185,7 @@
       </div>
       <div class="tec tec-mod_dados">
         <span class="span">MODELAGEM DE DADOS</span>
+      </div>
       </div> -->
     </div>
   </section>

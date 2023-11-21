@@ -59,7 +59,7 @@ $(function() {
             case 2:
                 formName = 'post';
                 inputNames = ['category_id', 'thumbnail', 'title', 'subtitle'];
-                inputLabels = ['Categoria', 'Imagem principal', 'Título', 'Subtítulo'];
+                inputLabels = ['Categoria: ', 'Imagem: ', 'Título: ', 'Subtítulo: '];
                 localStorage.setItem('editing', 'false');
                 break;
             case 4:
@@ -90,73 +90,78 @@ $(function() {
             form.append('<p class="form-message"></p>');
             actions.css('display', 'none');
             table.css('display', 'none');
-            for(let i = 0; i < inputNames.length; i++) {
-                form.append(`<label for="${inputNames[i]}">${inputLabels[i]}</label>`);
-                if(inputNames[i] == 'category_id') {
-                    // show the categories of the blog in the form through a select field
+            for (let i = 0; i < inputNames.length; i++) {
+                // Criando uma div para cada input
+                let fieldDiv = $(`<div class="input-field"></div>`);
+        
+                if (inputNames[i] == 'title' || inputNames[i] == 'subtitle') {
+                    fieldDiv.addClass(`${inputNames[i]}-field`);
+                }
+        
+                fieldDiv.append(`<label for="${inputNames[i]}" class="${inputNames[i]}">${inputLabels[i]}</label>`);
+        
+                if (inputNames[i] == 'category_id') {
+                    // Adicionando o select para 'Categoria' em uma div separada
                     async function showCategories() {
                         try {
                             const data = await getData('ajax/getCategories.php');
-                            // console.log(data);
-
-                            if(data.error != undefined) {
-                                form.append(data.error);
+                            if (data.error != undefined) {
+                                fieldDiv.append(data.error);
                             } else {
-                                form.append(`<select name="${inputNames[i]}" id="${inputNames[i]}"></select>`);
-                                let formSelect = form.find(`select[name="${inputNames[i]}"]`);
-                                for(let i = 0; i < data.categories.length; i++) {
+                                fieldDiv.append(`<select name="${inputNames[i]}" id="${inputNames[i]}"></select>`);
+                                let formSelect = fieldDiv.find(`select[name="${inputNames[i]}"]`);
+                                for (let i = 0; i < data.categories.length; i++) {
                                     formSelect.append(`<option value="${data.categories[i].id}">${data.categories[i].name}</option>`);
                                 }
                             }
-                        } catch(error) {
+                        } catch (error) {
                             console.error('Error loading categories: ', error)
                         }
                     }
                     await showCategories();
-                    continue;
-                }
-                if(inputNames[i] == 'image' || inputNames[i] == 'thumbnail' || inputNames[i] == 'profile_photo') {
-                    // file inputs for uploading photos
-                    form.append(`<input type="file" name="${inputNames[i]}" id="${inputNames[i]}" accept=".jpg, .jpeg, .png" class="image-input hidden" />`);
-                    form.append(`<div class="preview-image ${inputNames[i]}"><label for="${inputNames[i]}" class="image-label"><i class="fa-solid fa-upload fa-xl" style="color: #be5a38;"></i></label></div>`);
-
-                    // show uploaded photo
-                    $('input.image-input').on('change', async function(event) {
+                } else if (inputNames[i] == 'image' || inputNames[i] == 'thumbnail' || inputNames[i] == 'profile_photo') {
+                    // Adicionando inputs de arquivo para imagens em divs separadas
+                    fieldDiv.append(`<input type="file" name="${inputNames[i]}" id="${inputNames[i]}" accept=".jpg, .jpeg, .png" class="image-input hidden" />`);
+                    fieldDiv.append(`<div class="preview-image ${inputNames[i]}"><label for="${inputNames[i]}" class="image-label"><img src="assets/img/circle.svg" width="50" height="50" alt="sla"/></label></div>`);
+        
+                    // Mostrando a foto carregada
+                    fieldDiv.find(`input[name="${inputNames[i]}"]`).on('change', function(event) {
                         let src = URL.createObjectURL(event.target.files[0]);
-                        $('.preview-image label').empty();
-                        $('.preview-image .preview-image-content').remove();
-                        $('.preview-image').append(`<div class="preview-image-content"><img src="${src}" alt="Prévia da imagem" /></div>`);
+                        let previewDiv = $(this).siblings('.preview-image');
+            
+                        previewDiv.empty();
+                        previewDiv.append(`<div class="preview-image-content"><img src="${src}" alt="Prévia da imagem" /></div>`);
                     });
 
-                    continue;
-                } else if(inputNames[i] == 'email') {
-                    // email inputs
-                    form.append(`<input type="email" name="${inputNames[i]}" id="${inputNames[i]}" />`);
-                    continue;
-                } else if(inputNames[i] == 'role') {
-                    // user role permission
+                } else if (inputNames[i] == 'email') {
+                    // Input para e-mail em div separada
+                    fieldDiv.append(`<input type="email" name="${inputNames[i]}" id="${inputNames[i]}" />`);
+                } else if (inputNames[i] == 'role') {
+                    // Seleção de papel do usuário em div separada
                     async function showRoles() {
                         try {
                             const data = await getData('ajax/getRoles.php');
-                            form.append(`<select name="${inputNames[i]}" id="${inputNames[i]}"></select>`);
-                            let roleSelect = form.find(`select[name="${inputNames[i]}"]`);
-                            for(let j = 0; j < data.roles.length; j++) {
+                            fieldDiv.append(`<select name="${inputNames[i]}" id="${inputNames[i]}"></select>`);
+                            let roleSelect = fieldDiv.find(`select[name="${inputNames[i]}"]`);
+                            for (let j = 0; j < data.roles.length; j++) {
                                 roleSelect.append(`<option value="${j}">${data.roles[j]}</option>`);
                             }
-                        } catch(error) {
+                        } catch (error) {
                             console.error('Error loading roles: ', error);
                         }
                     }
                     await showRoles();
-                    continue;
                 } else {
-                    // normal text inputs
-                    form.append(`<input type="text" name="${inputNames[i]}" id="${inputNames[i]}" />`);
-                    continue;
+                    // Inputs de texto normais em divs separadas
+                    fieldDiv.append(`<input type="text" name="${inputNames[i]}" id="${inputNames[i]}" class="inputuser"/>`);
                 }
+        
+                // Adicionando a div do campo do formulário ao formulário principal
+                form.append(fieldDiv);
             }
-            // post textarea
-            if(inputNames[0] == 'category_id') {
+        
+            // Textarea para postagem
+            if (inputNames[0] == 'category_id') {
                 form.append('<label for="post">Postagem</label><textarea name="post" id="post"></textarea>');
                 // TinyMCE editor
                 tinymce.init({

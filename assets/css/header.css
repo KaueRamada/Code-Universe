@@ -1,40 +1,61 @@
-/* header styles */
 
-header {
-    width: 100%;
-    height: 50px;
-    background-color: var(--blue1);
+/* NavBar */
+
+
+nav ul{
     display: flex;
+}
+
+nav img.logo{
+    width: 18vw;
+    position: absolute;
+    cursor: pointer;
+    left: 20px;
+}
+
+ul.nav-itens{
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-header * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+nav ul li{
+    list-style: none;
+    margin: 8px 0 8px 0;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+    border-radius: 10px;
 }
 
-header .content {
-    width: 100%;
-    /* max-width: 1600px; */
-    height: 50px;
+nav ul li a,
+nav ul li p{
+    text-decoration: none;
+    padding: 10px 5px 10px 5px;
+    color: var(--light0);
+    z-index: 2;
+}
+
+nav ul li:nth-child(3){
+    margin-right: 40px;
+}
+
+.content-itens{
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    padding: 0 3%;
 }
 
-nav {
-    height: 100%;
+.content-itens li:hover{
+    background: linear-gradient(to right, var(--color1) 10%, var(--color2) 50%, var(--color1) 90%);    
+    background-size: 200%;
+    color: var(--light0);
+    background-position: 100%;
+    animation: gradient 4s linear infinite;
 }
-
-nav ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
+nav ul li a:hover{
+    color: var(--light0);
 }
-
 nav ul.profile {
     padding: 0 20px;
 }
@@ -62,37 +83,41 @@ nav .profile-photo img {
     object-fit: cover;
 }
 
-nav .profile-name {
-    margin-bottom: 2px;
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
 }
 
-nav ul li {
-    height: 70%;
-    border-radius: 5px;
-    list-style: none;
-    margin: 0 15px;
-    color: #000;
-    background-color: #dddddd44;
-    transition: .2s;
-}
-
-nav ul li:hover {
-    background-color: var(--dark1);
-}
-
-nav ul li:last-child {
-    margin: 0;
-}
-
-nav ul li a {
-    width: 100%;
+nav ul.profile a {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    color: var(--light0);
+    color: #fff;
     text-decoration: none;
     cursor: pointer;
-    padding: 0px 15px;
-    padding-bottom: 2px;
+}
+
+.navbar{
+    background-color: var(--color3);
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    box-shadow: 
+    0 0 5px #0026ff,
+    0 0 15px #0026ff,
+    0 0 15px #0026ff;
+}
+
+.nav-itens{
+    position: absolute;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-top: 15px;
 }

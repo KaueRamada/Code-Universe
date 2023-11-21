@@ -38,14 +38,6 @@ CREATE TABLE IF NOT EXISTS `tb_admin_users` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Extraindo dados da tabela `tb_admin_users`
---
-
-INSERT INTO `tb_admin_users` (`id`, `user`, `email`, `password`, `name`, `profile_photo`) VALUES
-(5, 'admin', 'contato@gustavo-souza.com', '1234', 'Gustavo E. E. Souza', 'assets/uploads/luto elvis.png'),
-(4, 'kaueramada', 'kaue@ramada.com', 'kaue1234', 'Kauê Ramada', 'assets/uploads/profile-photo.png'),
-(6, 'erick', 'erick@planissimo.com', 'plano111', 'Erick Araújo', 'assets/uploads/erick.jpg');
 
 -- --------------------------------------------------------
 

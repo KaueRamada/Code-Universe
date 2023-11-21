@@ -10,7 +10,9 @@
     <link rel="shortcut icon" type="imagex/png" href="img/???">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>assets/css/main-style.css"/>
-    <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>assets/css/blog.css"/>
+    <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>assets/css/posts.css"/>
+    <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>assets/css/header.css"/>
+    <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>assets/css/article.css"/>
     <title>Code Universe</title>
 </head>
 <body>

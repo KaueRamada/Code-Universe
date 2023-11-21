@@ -7,26 +7,29 @@
 /* my color palette */
 :root {
     --dark0: #000000;
-    --dark1: #393e41;
-    --light0: #ffffff;
-    --light1: #f2f3f6;
-    --light2: #e7e5df;
-    --light3: #d3d0cb;
-    --blue1: #0075ba;
-    --blue2: #ccecff;
-    --blue3: #e0f4ff;
-    --blue4: #f5fbff;
-    --brown1: #be5a38;
+    --dark1: #393E41;
+    --light0: #FFFFFF;
+    --color1: #014aad;
+    --color2: #c66be5;
+    --color3: #06002f;
+    --color4: #bb9bfb;
+    --color5: #741cf3;
 }
 
 body {
     font-family: 'Segoe UI';
     font-size: 16px;
-    color: var(--dark0);
 }
+/* Navbar */
 
 /* login and signup pages */
 
+.tox-tinymce{
+    width: 90%;
+}
+img.logo{
+    width: 20vw;
+}
 .register-container {
     position: relative;
     width: 100%;
@@ -36,6 +39,54 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.input-field{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+}
+
+.title-field,
+.subtitle-field{
+    display: block;
+}
+
+.inputuser{
+    background: none;
+    border: none;
+    border-width: 2px;
+    padding: 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-style: solid;
+    border-image: linear-gradient(to right, var(--color1), var(--color2)) 1;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+label.title{
+    position: absolute;
+    top: 580px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+label.subtitle{
+    position: absolute;
+    top: 640px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+
 
 /*p.form-message {
     position: relative;
@@ -75,14 +126,8 @@ body {
     flex-direction: column;
 }
 
-.register-box form label {
-    margin: 10px 0;
-}
-
 input,
 select {
-    height: 40px;
-    margin-bottom: 10px;
     padding: 0 10px;
     outline: none;
     border: 1px solid var(--light2);
@@ -147,8 +192,8 @@ header {
     position: fixed;
     z-index: 99;
     width: 100%;
-    height: 50px;
-    background-color: var(--blue1);
+    height: 70px;
+    background-color: var(--color3);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -183,7 +228,7 @@ header ul.dropdown {
 }
 
 header ul.dropdown li {
-    background-color: var(--brown1);
+    background-color: var(--color2);
     height: 50px;
 }
 
@@ -228,24 +273,31 @@ header ul li.action > a {
     top: 50px;
     width: 100%;
     min-height: calc(100vh - 50px);
-    background-color: var(--light1);
-    color: #000;
+    background-image: url(../img/fundo_painel.png);
+    color: var(--light0);
     padding: 40px 3%;
 }
 
 .window {
     flex-direction: column;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
     align-items: center;
-    background-color: var(--light0);
+    background-color: var(--color3);
     padding: 40px;
+    width: 75%;
     min-height: calc(100vh - 50px - 40px - 40px);
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 2px #eee;
+    border-radius: 25px;
 }
 
 /* dashboard */
 .dashboard {
     display: flex;
+}
+
+.profile-info{
+    color: var(--light0);
 }
 
 .profile-info .profile-photo {
@@ -267,7 +319,7 @@ header ul li.action > a {
     display: none;
 }
 
-.action-window .title {
+.action-window div.title {
     text-align: center;
     font-weight: bold;
     margin-bottom: 30px;
@@ -282,24 +334,11 @@ header ul li.action > a {
     align-items: center;
 }
 
-.action-window label {
-    margin-bottom: 10px;
-}
 
-.action-window form input,
-.action-window form textarea {
-    width: 95%;
-    max-width: 400px;
-    margin-bottom: 20px;
-    border: 1px solid var(--light2);
-    border-radius: 5px;
-    outline: none;
-}
 
 .action-window form textarea {
     max-width: 1200px;
     height: 500px;
-    padding: 10px;
     resize: none;
 }
 
@@ -314,8 +353,8 @@ form input[type="file"] {
 }
 
 .action-window select {
+    margin-left: 10px;
     height: 30px;
-    margin-bottom: 20px;
 }
 
 .action-window .info {
@@ -411,11 +450,34 @@ label.image-label {
 }
 
 .action-window form input[type="submit"] {
-    width: 200px;
+    padding: 10px;
     cursor: pointer;
+    border-radius: 15px;
     margin-top: 10px;
     border: none;
+    background: linear-gradient(to right, var(--color1) 10%, var(--color2) 50%, var(--color1) 90%);    
+    background-size: 200%;
+    color: var(--light0);
 }
+
+.action-window form input[type="submit"]:hover{
+    background-position: 100%;
+    animation: gradient 4s linear infinite;
+    transform: scale(1.02);
+}
+
+.action-window form input[type="submit"]:active{
+    transform: scale(0.97);
+}
+
+@keyframes gradient{
+    0% { 
+        background-position: 0% 0%; 
+    }
+    100% { 
+        background-position: 200% 0; }
+}
+
 
 .action-window .submit-btns {
     margin-top: 20px;
@@ -429,8 +491,7 @@ label.image-label {
 }
 
 .action-window .submit-btns input:last-child {
-    background-color: var(--light0);
-    color: var(--dark0);
+    color: var(--light0);
 }
 
 .action-window .submit-btns input:last-child:hover {
@@ -444,7 +505,7 @@ label.image-label {
     align-items: center;
     justify-content: flex-end;
     background-color: var(--blue3);
-    border-bottom: 2px solid var(--light0);
+    border-bottom: 2px solid var(--color4);
 }
 
 .action-window table {
@@ -465,10 +526,6 @@ tr {
     transition: .2s;
 }
 
-tr:last-child td {
-    border-bottom: none !important;
-}
-
 tr:hover {
     background-color: var(--blue4);
 }
@@ -478,21 +535,21 @@ th, td {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    border-bottom: 2px solid var(--light0);
-    border-left: 2px solid var(--light0);
+    border-bottom: 2px solid var(--color4);
+    border-left: 2px solid var(--color4);
     padding: 15px 20px;
     text-align: left;
     font-weight: 400;
     text-align: center;
 }
 
-th {
-    background-color: var(--blue4);
+td:last-child,
+th:last-child{
+    border-right: 2px solid var(--color4);
 }
 
-th:first-child,
-td:first-child {
-    border-left: none;
+th {
+    background-color: var(--blue4);
 }
 
 td.photo {
@@ -532,7 +589,9 @@ table tr .action-btn {
 }
 
 .action-btn a {
-    color: #000;
+    color: var(--light0);
+    background-color: var(--color5);
+    padding: 5px;
     text-decoration: none;
     padding: 5px 15px;
     border-radius: 5px;
@@ -540,11 +599,15 @@ table tr .action-btn {
 }
 
 .action-btn a:hover {
-    background-color: var(--blue2);
+    background-color: var(--color2);
 }
 
 .action-btn.delete a {
-    background-color: var(--blue1);
+    background-color: var(--color4);
     color: var(--light0);
     border: 0;
+}
+
+.action-btn.delete a:hover {
+    background-color: var(--color2);
 }

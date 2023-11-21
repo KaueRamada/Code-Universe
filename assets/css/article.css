@@ -1,23 +1,55 @@
-/* article styles */
-
-main.article {
-    background-color: var(--light1);
-    min-height: calc(100vh - 70px);
-    padding: 40px 3%;
+:root {
+    --dark0: #000000;
+    --dark1: #393E41;
+    --light0: #FFFFFF;
+    --color1: #014aad;
+    --color2: #c66be5;
+    --color3: #06002f;
 }
 
-main.article .content {
-    background-color: var(--light0);
-    min-height: calc(100vh - 50px - 40px - 40px);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 2px #eee;
+main {
+    display: flex;
+    flex-direction: column;
+    color: var(--light0);
 }
 
-main.article .content h1:first-child {
-    margin-top: 0;
+section.article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/fundo_login.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    padding: 70px;
 }
 
+.outer-container {
+    margin-top: 70px;
+    width: 50vw;
+    height: 70vh;
+    overflow: hidden;
+    border: 5px solid var(--light0);
+    border-radius: 30px;
+    box-shadow:
+        0 0 5px #0026ff,
+        0 0 15px #0026ff,
+        0 0 15px #0026ff;
+}
+
+.inner-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.content-article {
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    background-color: var(--color3);
+    padding: 30px;
+}
 
 /* annoying bugs fix */
 
@@ -25,10 +57,69 @@ nav .profile-name {
     margin: 0;
 }
 
-nav ul li a {
-    padding-bottom: 0;
-}
-
 /* TinyMCE content.min.css file */
 
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;line-height:1.4;}table{border-collapse:collapse}table:not([cellpadding]) td,table:not([cellpadding]) th{padding:.4rem}table[border]:not([border="0"]):not([style*=border-width]) td,table[border]:not([border="0"]):not([style*=border-width]) th{border-width:1px}table[border]:not([border="0"]):not([style*=border-style]) td,table[border]:not([border="0"]):not([style*=border-style]) th{border-style:solid}table[border]:not([border="0"]):not([style*=border-color]) td,table[border]:not([border="0"]):not([style*=border-color]) th{border-color:#ccc}figure{display:table;margin:1rem auto}figure figcaption{color:#999;display:block;margin-top:.25rem;text-align:center}hr{border-color:#ccc;border-style:solid;border-width:1px 0 0 0}code{background-color:#e8e8e8;border-radius:3px;padding:.1rem .2rem}.mce-content-body:not([dir=rtl]) blockquote{border-left:2px solid #ccc;margin-left:1.5rem;padding-left:1rem}.mce-content-body[dir=rtl] blockquote{border-right:2px solid #ccc;margin-right:1.5rem;padding-right:1rem}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.4;
+}
+
+table {
+    border-collapse: collapse
+}
+
+table:not([cellpadding]) td,
+table:not([cellpadding]) th {
+    padding: .4rem
+}
+
+table[border]:not([border="0"]):not([style*=border-width]) td,
+table[border]:not([border="0"]):not([style*=border-width]) th {
+    border-width: 1px
+}
+
+table[border]:not([border="0"]):not([style*=border-style]) td,
+table[border]:not([border="0"]):not([style*=border-style]) th {
+    border-style: solid
+}
+
+table[border]:not([border="0"]):not([style*=border-color]) td,
+table[border]:not([border="0"]):not([style*=border-color]) th {
+    border-color: #ccc
+}
+
+figure {
+    display: table;
+    margin: 1rem auto
+}
+
+figure figcaption {
+    color: #999;
+    display: block;
+    margin-top: .25rem;
+    text-align: center
+}
+
+hr {
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 1px 0 0 0
+}
+
+code {
+    background-color: #e8e8e8;
+    border-radius: 3px;
+    padding: .1rem .2rem
+}
+
+.mce-content-body:not([dir=rtl]) blockquote {
+    border-left: 2px solid #ccc;
+    margin-left: 1.5rem;
+    padding-left: 1rem
+}
+
+.mce-content-body[dir=rtl] blockquote {
+    border-right: 2px solid #ccc;
+    margin-right: 1.5rem;
+    padding-right: 1rem
+}

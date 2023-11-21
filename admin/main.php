@@ -15,6 +15,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> <!-- jQuery API -->
     <script src="https://cdn.tiny.cloud/1/4lj4mvfi4znfzdptgzp5yjmk2o8iwz5eppug7ae1kmjtdqsv/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script> <!-- TinyMCE editor -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js"></script> <!-- TinyMCE jQuery integration -->
+    <link href="fontawesome/css/all.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/52201d9086.js" crossorigin="anonymous"></script> <!-- font awesome icons -->
 
     <title>Painel de Controle | Code Universe</title>
@@ -98,7 +99,7 @@
             <div class="window dashboard">
                 <div class="profile-info">
                     <?php
-                        echo $_SESSION['myblog-user'].'<br>'.$_SESSION['myblog-email'].'<br>'.$_SESSION['myblog-name'].'<br>'.$_SESSION['myblog-role-name'];
+                        echo 'Usuário: ' . $_SESSION['myblog-user'].'<br> Email: '.$_SESSION['myblog-email'].'<br> Nome: '.$_SESSION['myblog-name'];
                     ?>
                     <div class="profile-photo">
                         <img src="<?php echo INCLUDE_PATH_ADMIN.$_SESSION['myblog-profile-photo']; ?>" alt="Foto de perfil" />

@@ -58,7 +58,7 @@
                 <h3>Entre</h3>
             </div>
             <form action="" method="post">
-            <input type="text" name="user" class="inputuser" id="user" required />
+                <input type="text" name="user" class="inputuser" id="user" required />
                 <label for="user" class="user">Usuário ou email</label>
 
                 
