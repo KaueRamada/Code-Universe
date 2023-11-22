@@ -51,7 +51,7 @@ section.posts > .title {
     position: relative;
     border: 5px solid var(--light0);
     width: 350px;
-    height: 350px;
+    height: 400px;
     background-color:rgba(12, 12, 12, 0.5);
     border-radius: 20px;
     display: flex;
@@ -94,6 +94,7 @@ section.posts > .title {
     width: 100%;
     height: 50%;
     padding: 20px;
+    padding-top: 10px;
 }
 
 .posts-content .post .creation-date {
@@ -101,23 +102,30 @@ section.posts > .title {
 }
 
 .posts-content .post .title {
-    margin-bottom: 10px;
+    display: -webkit-box;
     font-weight: 600;
     font-size: 24px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    white-space: pre-wrap;
+    margin-bottom: 10px;
 }
 
 .posts-content .post .subtitle {
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     overflow: hidden;
     white-space: pre-wrap;
+    margin-bottom: 15px;
 }
 
 .posts-content .post .read-more {
     position: absolute;
     bottom: 20px;
-    padding: 5px 10px;
+    padding-top: 20px;
+    display: none;
 }
 
 .posts-content .post .read-more a {
@@ -132,7 +140,7 @@ section.posts > .title {
 .posts-content .post .category {
     position: absolute;
     bottom: 20px;
-    right: 20px;
+    left: 30px;
     background: linear-gradient(to right, var(--color1) 10%, var(--color2) 50%, var(--color1) 90%);    
     background-size: 200%;
     color: var(--light0);

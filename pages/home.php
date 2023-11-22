@@ -84,7 +84,7 @@
             <div class="tec '.$category.'">
               <a href="posts?category='.$category.'">
                 <span class="span">'.$value['name'].'</span>
-                <img src="'.INCLUDE_PATH.$value['image'].'" alt="Logo" />
+                <img src="'.INCLUDE_PATH_ADMIN.$value['image'].'" alt="Logo" />
               </a>
             </div>
             ';
