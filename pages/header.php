@@ -7,31 +7,24 @@
           <li><a href="index.php#team">EQUIPE</a></li>
           <li><a href="#content">CONTEÚDO</a>
             <ul class="dropdown">
-              <div>
-                <a href="posts?category=HTML">HTML</a>
-              </div>
-              <div>
-                <a href="posts?category=CSS">CSS</a>
-              </div>
-              <div>
-                <a href="posts?category=JAVASCRIPT">JAVA SCRIPT</a>
-              </div>
-              <div>
-              <a href="posts?category=PHP">PHP</a>
-              </div>
-              <div>
-              <a href="posts?category=JAVA">JAVA</a>
-              </div>
-              <div>
-              <a href="posts?category=PYTHON">PYTHON</a>
-              </div>
-              <div>
-              <a href="posts?category=SQL">SQL</a>
-              </div>
-              <div>
-              <a href="posts?category=MODELAGEM DE DADOS">MODELAGEM DE DADOS</a>
-              </div>
-              <ul>
+              <?php
+                  $sql = $pdo->prepare("SELECT * FROM tb_categories");
+                  $sql->execute();
+                  if($sql->rowCount() == 0) {
+                    echo "Nenhuma categoria cadastrada";
+                  } else {
+                    $categories = $sql->fetchAll(PDO::FETCH_ASSOC);
+                    foreach($categories as $key => $value) {
+                      $category = strtolower($value['name']);
+                      echo '
+                      <div>
+                        <a href="posts?category='.$category.'">'.$value['name'].'</a>
+                      </div>
+                      ';
+                    }
+                  }
+              ?>
+            <ul>
           </li>
         </div>
 
