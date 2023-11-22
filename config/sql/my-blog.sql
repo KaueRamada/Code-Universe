@@ -38,7 +38,11 @@ CREATE TABLE IF NOT EXISTS `tb_admin_users` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-
+INSERT INTO `tb_admin_users` (`id`, `user`, `email`, `password`, `name`, `profile_photo`, `role`, `joined_in`) VALUES
+(1, 'Ramada', 'kaueramada@gmail.com', '$2y$10$0u7Yo9ox.3BXbTUAG/s1qe265BGoQdmMvSbeS2g5VD7208/XiwpS6', 'Kaue Ramada', 'assets/images/gatin.jpg', 0, '2023-11-15 19:53:37'),
+(3, 'Isa', 'isabelle@gmail.com', '$2y$10$mkNPlb0UncXs5HZGwrfmuO4UoG.705iDbQoBou0GJcKTjhpdIeB2m', 'Isabelle', 'assets/images/no-profile-photo.svg', 0, '2023-11-21 21:40:31'),
+(2, 'Artut', 'arthur@gmail.com', '$2y$10$REHziL36vEWL0t46ByEf2.shW7igHDYwjcc8o59CaS4bvAdrD9uZ2', 'Arthur Ventura', 'assets/images/arthur.png', 0, '2023-11-21 21:34:59');
+COMMIT;
 -- --------------------------------------------------------
 
 --
@@ -68,6 +72,7 @@ INSERT INTO `tb_categories` (`id`, `name`, `image`, `creation_date`) VALUES
 (8, 'MODELAGEM DE DADOS', 'assets/img/logos-linguagens/modelagem_de_dados.png', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
+
 
 --
 -- Estrutura da tabela `tb_posts`

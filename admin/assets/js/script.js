@@ -54,7 +54,7 @@ $(function() {
             case 0:
                 formName = 'category';
                 inputNames = ['name', 'image'];
-                inputLabels = ['Nome', 'Imagem'];
+                inputLabels = ['Nome: ', 'Imagem: '];
                 break;
             case 2:
                 formName = 'post';
@@ -65,7 +65,7 @@ $(function() {
             case 4:
                 formName = 'user';
                 inputNames = ['user', 'email', 'name', 'profile_photo', 'role'];
-                inputLabels = ['Usuário', 'Email', 'Nome', 'Foto', 'Permissão'];
+                inputLabels = ['Usuário: ', 'Email: ', 'Nome: ', 'Foto: ', 'Permissão: '];
                 break;
             // edit forms
             case 1:
@@ -122,7 +122,7 @@ $(function() {
                 } else if (inputNames[i] == 'image' || inputNames[i] == 'thumbnail' || inputNames[i] == 'profile_photo') {
                     // Adicionando inputs de arquivo para imagens em divs separadas
                     fieldDiv.append(`<input type="file" name="${inputNames[i]}" id="${inputNames[i]}" accept=".jpg, .jpeg, .png" class="image-input hidden" />`);
-                    fieldDiv.append(`<div class="preview-image ${inputNames[i]}"><label for="${inputNames[i]}" class="image-label"><img src="assets/img/circle.svg" width="50" height="50" alt="sla"/></label></div>`);
+                    fieldDiv.append(`<div class="preview-image ${inputNames[i]}"><label for="${inputNames[i]}" class="image-label"><img src="assets/img/circle.png" alt="sla"/></label></div>`);
         
                     // Mostrando a foto carregada
                     fieldDiv.find(`input[name="${inputNames[i]}"]`).on('change', function(event) {
@@ -135,7 +135,7 @@ $(function() {
 
                 } else if (inputNames[i] == 'email') {
                     // Input para e-mail em div separada
-                    fieldDiv.append(`<input type="email" name="${inputNames[i]}" id="${inputNames[i]}" />`);
+                    fieldDiv.append(`<input type="email" name="${inputNames[i]}" id="${inputNames[i]}" class="inputuser"/>`);
                 } else if (inputNames[i] == 'role') {
                     // Seleção de papel do usuário em div separada
                     async function showRoles() {

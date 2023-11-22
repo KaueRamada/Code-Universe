@@ -1,0 +1,213 @@
+:root {
+    --dark0: #000000;
+    --dark1: #393E41;
+    --light0: #FFFFFF;
+    --color1: #014aad;
+    --color2: #c66be5;
+    --color3: #06002f;
+    --color4: #bb9bfb;
+    --color5: #741cf3;
+}
+
+body{
+    background-color: red;
+}
+
+h3{
+    color: var(--light0);
+}
+
+.content-itens{
+    display: flex;
+    align-items: center;
+}
+
+.content-itens li:hover{
+    background: linear-gradient(to right, var(--color1) 10%, var(--color2) 50%, var(--color1) 90%);    
+    background-size: 200%;
+    color: var(--light0);
+    background-position: 100%;
+    animation: gradient 4s linear infinite;
+}
+
+nav ul li a,
+nav ul li p{
+    text-decoration: none;
+    padding: 10px 5px 10px 5px;
+    color: var(--light0);
+    z-index: 2;
+}
+
+nav ul li a:hover{
+    color: var(--light0);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+nav ul li{
+    list-style: none;
+    margin: 8px 0 8px 0;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.navbar{
+    background-color: var(--color3);
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    box-shadow: 
+    0 0 5px #0026ff,
+    0 0 15px #0026ff,
+    0 0 15px #0026ff;
+}
+
+.nav-itens{
+    position: absolute;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-top: 15px;
+}
+
+ul.dropdown{
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: var(--light0) 2px solid;
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+    top: 70px;
+    z-index: 99999;
+    padding: 0;
+    transition: opacity 0.5s ease;
+    box-shadow: 
+    0 0 5px #0026ff,
+    0 0 15px #0026ff,
+    0 0 15px #0026ff;
+}
+
+ul.dropdown li{
+    padding: 0;
+    margin: 0;
+}
+
+li:last-child:hover ul.dropdown{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+ul.dropdown p{
+    z-index: 999;
+    margin: 0;
+}
+
+ul.dropdown div {
+    width: 105px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: none;
+    background: transparent;
+    transition: background-position 0.3s ease;
+}
+
+.logout:hover,
+.return:hover{
+    background: linear-gradient(to right, var(--color1) 10%, var(--color2) 50%, var(--color1) 90%);    
+    background-size: 200%;
+    color: var(--light0);
+    background-position: 100%;
+    animation: gradient 4s linear infinite;
+}
+  
+ul.dropdown div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, var(--color1) 10%, var(--color2) 50%, var(--color1) 90%);
+    background-size: 200%;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+  
+ul.dropdown div:hover::before {
+    opacity: 1;
+    background-position: 100%;
+    animation: gradient 4s linear infinite;
+}
+
+
+nav ul div li:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    top: calc(100% + -20px);
+    width: 100px;
+    right: 430px;
+    height: 20px;
+    z-index: 999;
+    background: transparent;
+}
+
+nav ul div li:nth-child(3)::before {
+    content: '';
+    position: absolute;
+    top: calc(100% + -20px);
+    right: 320px;
+    width: 90px;
+    height: 20px;
+    z-index: 999;
+    background: transparent;
+}
+
+nav ul li:nth-child(4)::before {
+    content: '';
+    position: absolute;
+    top: calc(100% + -20px);
+    right: 210px;
+    width: 90px;
+    height: 20px;
+    z-index: 999;
+    background: transparent;
+}
+
+
+
+li:last-child:hover ul.dropdown,
+li:last-child a:hover + ul.dropdown {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+@keyframes gradient{
+    0% { 
+        background-position: 0% 0%; 
+    }
+    100% { 
+        background-position: 200% 0; }
+}
