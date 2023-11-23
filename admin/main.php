@@ -22,6 +22,7 @@ if (Panel::isLogged()) {
         <link href="fontawesome/css/all.css" rel="stylesheet">
         <script src="https://kit.fontawesome.com/52201d9086.js" crossorigin="anonymous"></script>
         <!-- font awesome icons -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- chart.js -->
 
         <title>Painel de Controle | Code Universe</title>
     </head>
