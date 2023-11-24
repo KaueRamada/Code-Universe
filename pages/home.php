@@ -71,54 +71,54 @@
     <div class="content-video"></div>
 
     <div class="categories">
-    <?php
-        $sql = $pdo->prepare("SELECT * FROM tb_categories");
-        $sql->execute();
-        if($sql->rowCount() == 0) {
-          echo "Nenhuma categoria cadastrada";
-        } else {
-          $categories = $sql->fetchAll(PDO::FETCH_ASSOC);
-          foreach($categories as $key => $value) {
-            $category = strtolower($value['name']);
-            echo '
-            <div class="tec '.$category.'">
-              <a href="posts?category='.$category.'">
-                <span class="span">'.$value['name'].'</span>
-                <img src="'.INCLUDE_PATH_ADMIN.$value['image'].'" alt="Logo" />
-              </a>
-            </div>
-            ';
-          }
-        }
-    ?>
+      <?php
+        // $sql = $pdo->prepare("SELECT * FROM tb_categories");
+        // $sql->execute();
+        // if($sql->rowCount() == 0) {
+        //   echo "Nenhuma categoria cadastrada";
+        // } else {
+        //   $categories = $sql->fetchAll(PDO::FETCH_ASSOC);
+        //   foreach($categories as $key => $value) {
+        //     $category = strtolower($value['name']);
+        //     echo '
+        //     <div class="tec '.$category.'">
+        //       <a href="posts?category='.$category.'">
+        //         <span class="span">'.$value['name'].'</span>
+        //         <img src="'.INCLUDE_PATH.$value['image'].'" alt="Logo" />
+        //       </a>
+        //     </div>
+        //     ';
+        //   }
+        // }
+      ?>
 
-      <!--
-      <div class="rows">  
-      <div class="tec tec-html">
-        <span class="span">HTML</span>
+
+      <div class="rows">
+        <div class="tec tec-html">
+          <span class="span">HTML</span>
+        </div>
+        <div class="tec tec-css">
+          <span class="span">CSS</span>
+        </div>
+        <div class="tec tec-js">
+          <span class="span">JAVASCRIPT</span>
+        </div>
+        <div class="tec tec-php">
+          <span class="span">PHP</span>
+        </div>
+        <div class="tec tec-java">
+          <span class="span">JAVA</span>
+        </div>
+        <div class="tec tec-python">
+          <span class="span">PYTHON</span>
+        </div>
+        <div class="tec tec-sql">
+          <span class="span">SQL</span>
+        </div>
+        <div class="tec tec-mod_dados">
+          <span class="span">MODELAGEM DE DADOS</span>
+        </div>
       </div>
-      <div class="tec tec-css">
-        <span class="span">CSS</span>
-      </div>
-      <div class="tec tec-js">
-        <span class="span">JAVASCRIPT</span>
-      </div>
-      <div class="tec tec-php">
-        <span class="span">PHP</span>
-      </div>
-      <div class="tec tec-java">
-        <span class="span">JAVA</span>
-      </div>
-      <div class="tec tec-python">
-        <span class="span">PYTHON</span>
-      </div>
-      <div class="tec tec-sql">
-        <span class="span">SQL</span>
-      </div>
-      <div class="tec tec-mod_dados">
-        <span class="span">MODELAGEM DE DADOS</span>
-      </div>
-      </div> -->
     </div>
   </section>
 </main>
@@ -126,49 +126,53 @@
 <footer id="footer">
   <div class="footer-content">
     <img src="img/logo.png" alt="" class="logo">
+    
+    <div class="footer-menu01">
+      <ul class="footer-menu">
+        <p>Programação</p>
+        <li class="footer-menu-item">Anderson Rian</li>
+        <li class="footer-menu-item">Erick Araújo</li>
+        <li class="footer-menu-item">Gustavo Elia</li>
+        <li class="footer-menu-item">Juan Vieira</li>
+        <li class="footer-menu-item">Kauã Medeiro</li>
+        <li class="footer-menu-item">Kauã Yuuki</li>
+        <li class="footer-menu-item">Kauê Ramada</li>
+      </ul>
 
-    <ul class="footer-menu">
-      <p>Programação</p>
-      <li class="footer-menu-item">Anderson Rian</li>
-      <li class="footer-menu-item">Erick Araújo</li>
-      <li class="footer-menu-item">Gustavo Elia</li>
-      <li class="footer-menu-item">Juan Vieira</li>
-      <li class="footer-menu-item">Kauã Medeiro</li>
-      <li class="footer-menu-item">Kauã Yuuki</li>
-      <li class="footer-menu-item">Kauê Ramada</li>
-    </ul>
+      <ul class="footer-menu">
+        <p>Design</p>
+        <li class="footer-menu-item">Abner Procópio</li> 
+        <li class="footer-menu-item">Isabelle Oliveira</li>
+      </ul>
+    </div>
+    
+    <div class="footer-menu02">
+      <ul class="footer-menu">
+        <p>Pesquisa</p>
+        <li class="footer-menu-item">Andressa Ayumi</li>
+        <li class="footer-menu-item">Caique Barbosa</li>
+        <li class="footer-menu-item">Giovanna Christina</li>
+        <li class="footer-menu-item">Gustavo Barone</li>
+        <li class="footer-menu-item">Jhenifer Maday</li>
+        <li class="footer-menu-item">Luiza Fadelli</li>
+        <li class="footer-menu-item">Igor Alves</li>
+      </ul>
 
-    <ul class="footer-menu">
-      <p>Design</p>
-      <li class="footer-menu-item">Abner Procópio</li> 
-      <li class="footer-menu-item">Isabelle Oliveira</li>
-    </ul>
-
-    <ul class="footer-menu">
-      <p>Pesquisa</p>
-      <li class="footer-menu-item">Andressa Ayumi</li>
-      <li class="footer-menu-item">Caique Barbosa</li>
-      <li class="footer-menu-item">Giovanna Christina</li>
-      <li class="footer-menu-item">Gustavo Barone</li>
-      <li class="footer-menu-item">Jhenifer Maday</li>
-      <li class="footer-menu-item">Luiza Fadelli</li>
-      <li class="footer-menu-item">Igor Alves</li>
-    </ul>
-
-    <ul class="footer-menu">
-      <p>Documentação</p>
-      <li class="footer-menu-item">Arthur Souza</li>
-      <li class="footer-menu-item">João Pedro</li>
-      <li class="footer-menu-item">Julia Benedetti</li>
-      <li class="footer-menu-item">Luiz Felipe</li>
-    </ul>
+      <ul class="footer-menu">
+        <p>Apresentação</p>
+        <li class="footer-menu-item">Arthur Souza</li>
+        <li class="footer-menu-item">João Pedro</li>
+        <li class="footer-menu-item">Julia Benedetti</li>
+        <li class="footer-menu-item">Luiz Felipe</li>
+      </ul>
+    </div>
   </div>
 
   <div class="footer-info">
     <ul class="footer-info-items">
-      <li class="footer-info-item">Home</li>
-      <li class="footer-info-item">Equipe</li>
-      <li class="footer-info-item">Conteúdo</li>
+      <li class="footer-info-item"><a href="#carouselExampleIndicators">Home</a></li>
+      <li class="footer-info-item"><a href="#team">Equipe</a></li>
+      <li class="footer-info-item"><a href="#content">Conteúdo</a></li>
     </ul>
 
     <div class="rights">

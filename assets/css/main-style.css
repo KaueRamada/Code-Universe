@@ -193,6 +193,11 @@ li:last-child a:hover + ul.dropdown {
 
 .rows{
     margin-top: 70px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .team{
@@ -325,6 +330,7 @@ section.content {
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     z-index: 2;
@@ -355,7 +361,7 @@ section.content {
 .tec {
     position: relative;
     z-index: 3;
-    box-shadow: 
+    box-shadow:
     inset 0 0 5px #0026ff,
     inset 0 0 15px #0026ff,
     inset 0 0 15px #0026ff,
@@ -364,8 +370,8 @@ section.content {
     0 0 15px #0026ff;
     border: 6px solid rgb(191, 230, 255);
     margin: 15px;
-    width: 170px;
-    height: 170px;
+    width: 28vh;
+    height: 28vh;
     border-radius: 100%;
     overflow: hidden;
 }
@@ -407,7 +413,7 @@ section.content {
     object-fit: contain;
 }
 
-/*.tec-html {
+.tec-html {
     background: url("../img/Conteúdo/Logo\ dos\ elementos/html.png") center/cover no-repeat;
     box-shadow: 
     inset 0 0 5px #0026ff,
@@ -486,19 +492,23 @@ section.content {
     0 0 5px #0026ff,
     0 0 15px #0026ff,
     0 0 15px #0026ff;
-}*/
+}
 
 /* Footer */
 #footer {
     background: black;
     color: white;
     padding: 80px 0;
+    /* display: flex;
+    justify-content: center;
+    flex-direction: column; */
 }
 
 #footer .footer-content {
     display: flex;
-    width: 60%;
+    width: 70%;
     margin: auto;
+    justify-content: space-evenly;
 }
 
 #footer .footer-content .footer-menu {
@@ -522,17 +532,26 @@ section.content {
     font-size: 0.8rem;
 }
 
-/* Footer Socials */
+#footer .footer-content .footer-menu01 {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+#footer .footer-content .footer-menu02 {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .socials {
     display: flex;
 }
 
-/* Footer Info */
 .footer-info {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    width: 60%;
+    width: 70%;
     margin: auto;
     font-weight: bold;
     color: #919496;
@@ -546,20 +565,26 @@ section.content {
 
 .footer-info .footer-info-items .footer-info-item {
     margin: 0 20px;
+    text-decoration: none;
+}
+
+.footer-info .footer-info-items .footer-info-item a{
+    text-decoration: none;
+    color: #919496;
     transition: all 300ms ease;
 }
 
-.footer-info-items li:nth-child(1):hover {
+.footer-info-items li a:nth-child(1):hover {
     color: #511e8f;
     cursor: pointer;
 }
 
-.footer-info-items li:nth-child(2):hover {
+.footer-info-items li a:nth-child(2):hover {
     color: #511e8f;
     cursor: pointer;
 }
 
-.footer-info-items li:nth-child(3):hover {
+.footer-info-items li a:nth-child(3):hover {
     color: #511e8f;
     cursor: pointer;
 }
@@ -568,7 +593,7 @@ section.content {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .footer-info .rights .country .brazil-flag {
@@ -577,4 +602,75 @@ section.content {
     display: inline-block;
     margin-left: 10px;
     border-radius: 2px;
+}
+
+.footer-info .rights p:hover{
+    transition: all 300ms ease;
+}
+.footer-info .rights p:hover{
+    color: #511e8f;
+}
+
+/* Responsividade */
+
+@media screen and (max-width: 1000px) {
+    .tec {
+        width: 140px;
+        height: 140px;
+    }
+
+    #footer .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-content .footer-menu01 {
+        margin: 15px 0;
+        padding: 0;
+    }
+    .footer-content .footer-menu02 {
+        margin: 15px 0;
+        padding: 0;
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+
+    .footer-content {
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .footer-content .footer-menu01 {
+        flex-direction: column;
+    }
+    .footer-content .footer-menu02 {
+        flex-direction: column;
+    }
+    .footer-content .footer-menu01 .footer-menu {
+        padding: 10px;
+        text-align: center;
+    }
+    .footer-content .footer-menu02 .footer-menu {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .footer-menu {
+        margin-bottom: 15px;
+    }
+
+    .footer-info {
+        justify-content: center;
+    }
+
+    .tec {
+        width: 100px;
+        height: 100px;
+    }
+
+    .rights {
+        display: none;
+    }
 }
