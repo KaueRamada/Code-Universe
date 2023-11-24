@@ -18,6 +18,7 @@
     $data['table'] = $tableName;
     $data['action'] = $action_name;
     $data['index'] = $index;
+    $data['dashboard'] = isset($_POST['dashboard']) ? true : false;
 
     if($action_name == 'edit' || $action_name == 'edit-password') {
         try {

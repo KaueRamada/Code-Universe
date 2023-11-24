@@ -142,6 +142,7 @@
         // updating tables
         $data['edit'] = true;
         $id = $_POST['index'];
+        $data['dashboard'] = ($_POST['dashboard'] == 'true') ? true : false;
         $hasImage = false;
 
         if((isset($_FILES['image']) && $_FILES['image']['name'] != '') || (isset($_FILES['thumbnail']) && $_FILES['thumbnail']['name'] != '') || (isset($_FILES['profile_photo']) && $_FILES['profile_photo']['name'] != '')) {
