@@ -7,6 +7,7 @@
           <li><a href="index.php#team">EQUIPE</a></li>
           <li><a href="#content">CONTEÚDO</a>
             <ul class="dropdown">
+<<<<<<< HEAD
               <!-- <div>
                 <a href="posts?category=html">HTML</a>
               </div>
@@ -48,6 +49,25 @@
                   }
                 }
             ?>
+=======
+              <?php
+                  $sql = $pdo->prepare("SELECT * FROM tb_categories");
+                  $sql->execute();
+                  if($sql->rowCount() == 0) {
+                    echo "Nenhuma categoria cadastrada";
+                  } else {
+                    $categories = $sql->fetchAll(PDO::FETCH_ASSOC);
+                    foreach($categories as $key => $value) {
+                      $category = strtolower($value['name']);
+                      echo '
+                      <div>
+                        <a href="posts?category='.$category.'">'.$value['name'].'</a>
+                      </div>
+                      ';
+                    }
+                  }
+              ?>
+>>>>>>> a00d96e1106d4144c63b2cb8b908b7e5cd3e9d36
             <ul>
           </li>
         </div>
