@@ -26,6 +26,7 @@
                     $hash = $info['password'];
                     if(password_verify($_POST['password'], $hash)) {
                         $_SESSION['myblog-login'] = true;
+                        $_SESSION['myblog-id'] = $info['id'];
                         $_SESSION['myblog-user'] = $info['user'];
                         $_SESSION['myblog-email'] = $info['email'];
                         $_SESSION['myblog-password'] = $info['password'];

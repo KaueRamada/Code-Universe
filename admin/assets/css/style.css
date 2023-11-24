@@ -162,6 +162,17 @@ input[type="submit"] {
 
 /* control panel page */
 
+.background {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.5);
+}
+
 .panel-container {
     width: 100%;
     height: 100vh;
@@ -231,6 +242,10 @@ header ul li {
     transition: .2s;
 }
 
+header ul li.mobile {
+    display: none;
+}
+
 header ul li.action span {
     width: 0px;
     height: 0px;
@@ -259,6 +274,101 @@ header ul li.action > a {
     padding-left: 20px;
 }
 
+
+/* mobile menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; 
+    width: 28px;
+    height: 20px;
+    cursor: pointer
+}
+
+.menu-toggle span {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: var(--light0);
+    transition: .2s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    top: 9px;
+    transform: rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    top: -9px;
+    transform: rotate(-45deg);
+}
+
+header .menu.mobile {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: calc(100dvh - 50px);
+    background-color: #fff;
+    border-left: 1px solid #eee;
+    position: absolute;
+    z-index: 999;
+    top: 70px;
+    bottom: 0;
+    right: -350px;
+}
+
+header .menu.mobile ul {
+    height: auto;
+    flex-direction: column;
+}
+
+header .menu.mobile ul li {
+    width: 100%;
+}
+
+header .menu.mobile ul li.mobile {
+        display: block;
+}
+
+header .menu.mobile ul li.mobile.none {
+    display: none;
+}
+
+header .menu.mobile ul li.action {
+    /* font-weight: 600; */
+    background-color: #eee;
+}
+
+header .menu.mobile ul li:hover {
+    background-color: #eee;
+}
+
+header .menu.mobile ul li.action span {
+    display: none;
+}
+
+header .menu.mobile ul li a {
+    width: 100%;
+    color: var(--dark0);
+    justify-content: flex-start;
+    padding: 15px;
+}
+
+header .menu.mobile ul li.action > a {
+    cursor: default;
+}
+
+header .menu.mobile ul.dropdown {
+    display: none;
+}
+
+
+
 .main {
     position: absolute;
     top: 50px;
@@ -277,7 +387,8 @@ header ul li.action > a {
     align-items: center;
     background-color: var(--color3);
     padding: 40px;
-    width: 75%;
+    width: 95%;
+    max-width: 1440px;
     min-height: calc(100vh - 50px - 40px - 40px);
     border-radius: 25px;
 }
@@ -285,10 +396,27 @@ header ul li.action > a {
 /* dashboard */
 .dashboard {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.profile-info{
-    color: var(--light0);
+.dashboard > div {
+    width: 50%;
+    height: calc(100dvh - 50px - 40px - 40px - 40px - 40px);
+    text-align: center;
+}
+
+.dashboard > div .section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid var(--color5);
+    padding-right: 5%;
 }
 
 .profile-info .profile-photo {
@@ -305,10 +433,52 @@ header ul li.action > a {
     object-fit: cover;
 }
 
+.profile-info .info {
+    margin: 20px 0;
+}
+
+.profile-info .action-btn {
+    margin-top: 5px;
+}
+    
+.profile-info .action-btn a {
+    color: var(--light0);
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: .2s;
+    background-color: var(--color5);
+}
+
+.statistics {
+    padding-left: 5%;
+}
+
+.statistics .totals {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid var(--light2);
+}
+
+.statistics .charts .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.statistics .charts canvas {
+    max-height: 300px;
+}
+
 label.user,
 label.email,
 label.name,
-label.thumbnail{
+label.thumbnail,
+label.password{
     margin-right: 5px;
 }
 /* action windows */
@@ -610,4 +780,36 @@ table tr .action-btn {
 
 .action-btn.delete a:hover {
     background-color: var(--color2);
+}
+
+/* responsiveness */
+
+@media only screen and (max-width: 880px) {
+    header .menu {
+        display: none;
+    } 
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    header .menu.mobile {
+        width: 70%;
+    }
+
+    .window {
+        padding: 30px 20px;
+    }
+
+    .action-window .submit-btns {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action-window .submit-btns input:last-child {
+        margin-bottom: 0;
+    }
 }
