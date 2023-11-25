@@ -351,7 +351,7 @@ section.content {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     width: 90%;
     max-width: 900px;
     color: white;
@@ -374,6 +374,18 @@ section.content {
     height: 28vh;
     border-radius: 100%;
     overflow: hidden;
+}
+
+.menu-content01{
+    display: flex;
+    justify-content: center;
+    /* width: 100%; */
+}
+
+.menu-content02{
+    display: flex;
+    flex-direction: initial;
+    justify-content: center;
 }
 
 .tec a {
@@ -635,7 +647,7 @@ section.content {
 }
 
 @media screen and (max-width: 640px) {
-
+    /* Footer */
     .footer-content {
         align-items: center;
         justify-content: center;
@@ -665,12 +677,17 @@ section.content {
         justify-content: center;
     }
 
+    .rights {
+        display: none;
+    }
+
+    /* Sction Conteúdo */
     .tec {
         width: 100px;
         height: 100px;
     }
 
-    .rights {
-        display: none;
+    .menu-content02 {
+        flex-wrap: wrap;
     }
 }
