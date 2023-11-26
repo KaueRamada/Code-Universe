@@ -402,7 +402,6 @@ header .menu.mobile ul.dropdown {
 
 .dashboard > div {
     width: 50%;
-    height: calc(100dvh - 50px - 40px - 40px - 40px - 40px);
     text-align: center;
 }
 
@@ -561,7 +560,7 @@ input[type="file"].hidden {
     height: 100%;
     border: 1px solid var(--light0);
     border-radius: 25px;
-    margin-bottom: 20px;
+    margin-left: 10px;
 }
 
 label.image-label {

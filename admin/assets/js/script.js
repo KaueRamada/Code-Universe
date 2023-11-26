@@ -359,24 +359,46 @@ $(function() {
                     selector: 'textarea#post',
                     height: 500,
                     plugins: [
-                        'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor',
-                        'pagebreak', 'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code',
-                        'fullscreen', 'insertdatetime', 'media', 'table', 'emoticons', 'template', 'help'
+                      'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor',
+                      'pagebreak', 'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code',
+                      'fullscreen', 'insertdatetime', 'media', 'table', 'emoticons', 'template', 'help'
                     ],
                     toolbar: 'undo redo | styles | bold italic backcolor | ' + 
-                    'alignleft aligncenter alignright alignjustify | ' +
-                    'bullist numlist outdent indent | link image media emoticons help',
+                      'alignleft aligncenter alignright alignjustify | ' +
+                      'bullist numlist outdent indent | link image media emoticons help',
                     menubar: 'edit view insert format tools table',
+                    file_picker_callback: function(callback, value, meta) {
+                      // Simplesmente criando um input de arquivo e clicando nele para selecionar a imagem
+                      var input = document.createElement('input');
+                      input.setAttribute('type', 'file');
+                      input.setAttribute('accept', 'image/*');
+                  
+                      input.onchange = function() {
+                        var file = this.files[0];
+                  
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                          callback(e.target.result, {
+                            alt: '' // Preencha com texto alternativo, se necessário
+                          });
+                        };
+                        reader.readAsDataURL(file);
+                      };
+                  
+                      input.click();
+                    },
                     setup: function(editor) {
-                        editor.on('init', function(e) {
-                            if(localStorage.getItem('editing') == 'true') {
-                                editor.setContent(localStorage.getItem('post'));
-                            }
-                            //console.log($('.tox .tox-mbtn').innerWidth());
-                        });
+                      editor.on('init', function(e) {
+                        if(localStorage.getItem('editing') == 'true') {
+                          editor.setContent(localStorage.getItem('post'));
+                        }
+                      });
                     }
-                });
+                  });
+                  
+                  
             }
+            
             // name of the author of the post
             form.append(`<input type="hidden" name="author" value="${$('header h3 span').text()}" />`);
             // name of the form
@@ -565,6 +587,12 @@ $(function() {
                     borderWidth: 0,
                     hoverOffset: 10
                 }]
+            },
+            options: {
+                responsive: true, // Tornar o gráfico responsivo
+                // Definir tamanho personalizado
+                width: 400, // Largura desejada
+                height: 400 // Altura desejada
             }
         })
     }, 1000);

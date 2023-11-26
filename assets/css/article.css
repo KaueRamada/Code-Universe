@@ -14,42 +14,63 @@ main {
 }
 
 section.article {
+    position: relative;
+    top: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-image: url(../img/fundo_login.png);
-    background-repeat: no-repeat;
+    background-repeat: repeat;
+    background-size: auto auto; /* Define a altura da imagem igual à altura da viewport */
     width: 100%;
-    height: 100vh;
-    padding: 70px;
-}
-
-.outer-container {
-    margin-top: 70px;
-    width: 50vw;
-    height: 70vh;
-    overflow: hidden;
-    border: 5px solid var(--light0);
-    border-radius: 30px;
-    box-shadow:
-        0 0 5px #0026ff,
-        0 0 15px #0026ff,
-        0 0 15px #0026ff;
-}
-
-.inner-container {
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
+    min-height: 100vh; /* Altura mínima para preencher a tela inicial */
+    padding: 50px 10px 50px 10px;
+    box-sizing: border-box;
 }
 
 .content-article {
-    min-height: 100%;
-    width: 100%;
-    height: auto;
+    flex-direction: column;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    align-items: center;
     background-color: var(--color3);
-    padding: 30px;
+    padding: 40px;
+    width: 100%;
+    max-width: 1440px;
+    min-height: calc(100vh - 50px - 40px - 40px);
+    border-radius: 30px;
 }
+
+@media screen and (max-width: 550px){
+    section.article {
+        padding: 35px;
+    }
+}
+
+@media screen and (max-width: 425px){
+    section.article {
+        top: 70px;
+        padding: 25px;
+    }
+
+    .content-article {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 375px){
+    section.article {
+        top: 70px;
+        padding: 15px;
+    }
+
+    .content-article {
+        padding: 15px;
+        border-radius: 20px;
+    }
+}
+
 
 /* annoying bugs fix */
 

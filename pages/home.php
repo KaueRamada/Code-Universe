@@ -1,7 +1,8 @@
 <main>
 <?php include 'header.php'; ?> 
+
   <!-- Carrosel -->
-  <section class="carrossel">
+  <section class="carrossel" id="home">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -57,10 +58,10 @@
           <span>Equipe responsável pelo conteúdo do site</span>
         </div>
       </div>
-      <div alt="Documentação" class="documentation-group">
+      <div alt="Arpresentação" class="apresentation-group">
         <div class="text">
-          <p>Documentação</p>
-          <span>Equipe responsável pela documentação do trabalho</span>
+          <p>Apresentação</p>
+          <span>Equipe responsável pela apresentação do trabalho</span>
         </div>
       </div>
     </div>
@@ -72,28 +73,28 @@
 
     <div class="categories">
       <?php
-        // $sql = $pdo->prepare("SELECT * FROM tb_categories");
-        // $sql->execute();
-        // if($sql->rowCount() == 0) {
-        //   echo "Nenhuma categoria cadastrada";
-        // } else {
-        //   $categories = $sql->fetchAll(PDO::FETCH_ASSOC);
-        //   foreach($categories as $key => $value) {
-        //     $category = strtolower($value['name']);
-        //     echo '
-        //     <div class="tec '.$category.'">
-        //       <a href="posts?category='.$category.'">
-        //         <span class="span">'.$value['name'].'</span>
-        //         <img src="'.INCLUDE_PATH.$value['image'].'" alt="Logo" />
-        //       </a>
-        //     </div>
-        //     ';
-        //   }
-        // }
+        $sql = $pdo->prepare("SELECT * FROM tb_categories");
+        $sql->execute();
+        if($sql->rowCount() == 0) {
+          echo "Nenhuma categoria cadastrada";
+        } else {
+          $categories = $sql->fetchAll(PDO::FETCH_ASSOC);
+          foreach($categories as $key => $value) {
+            $category = strtolower($value['name']);
+            echo '
+            <div class="tec '.$category.'">
+              <a href="posts?category='.$category.'">
+                <span class="span">'.$value['name'].'</span>
+                <img src="'.INCLUDE_PATH.$value['image'].'" alt="Logo" />
+              </a>
+            </div>
+            ';
+          }
+        }
       ?>
 
 
-      <div class="rows">
+      <!-- <div class="rows">
         <div class="tec tec-html">
           <span class="span">HTML</span>
         </div>
@@ -119,7 +120,8 @@
           <span class="span">MODELAGEM DE DADOS</span>
         </div>
       </div>
-    </div>
+      -->
+    </div> 
   </section>
 </main>
 
@@ -170,9 +172,9 @@
 
   <div class="footer-info">
     <ul class="footer-info-items">
-      <li class="footer-info-item"><a href="#carouselExampleIndicators">Home</a></li>
-      <li class="footer-info-item"><a href="#team">Equipe</a></li>
-      <li class="footer-info-item"><a href="#content">Conteúdo</a></li>
+      <li class="footer-info-item"><a href="<?php echo INCLUDE_PATH; ?>#home">Home</a></li>
+      <li class="footer-info-item"><a href="<?php echo INCLUDE_PATH; ?>#team">Equipe</a></li>
+      <li class="footer-info-item"><a href="<?php echo INCLUDE_PATH; ?>#content">Conteúdo</a></li>
     </ul>
 
     <div class="rights">

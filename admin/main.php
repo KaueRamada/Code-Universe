@@ -18,7 +18,7 @@
     <script src="https://kit.fontawesome.com/52201d9086.js" crossorigin="anonymous"></script> <!-- font awesome icons -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- chart.js -->
     
-    <title>Painel de Controle | My Blog</title>
+    <title>Painel de Controle | Code Universe</title>
 </head>
 <body>
     <?php
@@ -61,19 +61,21 @@
             <h3><?php echo 'Olá, <span>'.$_SESSION['myblog-name'].'</span>!'; ?></h3>
             <div class="menu">
                 <ul>
-                    <li><a href="<?php echo INCLUDE_PATH_ADMIN; ?>">Painel</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH_ADMIN; ?>">PAINEL</a></li>
                     <li style="display:<?php echo $display; ?>;" class="action" dropdown="0">
-                        <a href="">Categorias</a>
+                        <a href="">CATEGORIAS</a>
                         <span></span>
                         <ul class="dropdown">
                             <li><a href="" index="0">Adicionar categoria</a></li>
                             <li><a href="" index="1">Gerenciar categorias</a></li>
                         </ul>
                     </li>
+
                     <li class="mobile <?php echo $display; ?>"><a href="" index="0">Adicionar categoria</a></li>
                     <li class="mobile <?php echo $display; ?>"><a href="" index="1">Gerenciar categorias</a></li>
+                    
                     <li class="action" dropdown="1">
-                        <a href="">Postagens</a>
+                        <a href="">POSTAGENS</a>
                         <span></span>
                         <ul class="dropdown">
                             <li><a href="" index="2">Adicionar postagem</a></li>
@@ -83,7 +85,7 @@
                     <li class="mobile"><a href="" index="2">Adicionar postagem</a></li>
                     <li class="mobile"><a href="" index="3">Gerenciar postagens</a></li>
                     <li style="display:<?php echo $display; ?>;" class="action" dropdown="2">
-                        <a href="">Usuários</a>
+                        <a href="">USUÁRIOS</a>
                         <span></span>
                         <ul class="dropdown">
                             <li><a href="" index="4">Adicionar usuário</a></li>
@@ -92,8 +94,8 @@
                     </li>
                     <li class="mobile <?php echo $display; ?>"><a href="" index="4">Adicionar usuário</a></li>
                     <li class="mobile <?php echo $display; ?>"><a href="" index="5">Gerenciar usuários</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH; ?>">Blog</a></li>
-                    <li><a href="?logout">Sair</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>">CODE UNIVERSE</a></li>
+                    <li><a href="?logout">SAIR</a></li>
                 </ul>
             </div>
             <div class="menu-toggle">
@@ -151,7 +153,7 @@
                     <div class="charts">
                         <div class="chart1">
                             <div class="title">Postagens por categoria:</div>
-                            <canvas id="myChart1">
+                            <canvas id="myChart1" style="width: 100px; height: 100px;">
                         </div>
                     </div>
                 </div>
