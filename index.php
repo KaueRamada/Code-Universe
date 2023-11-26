@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>assets/css/posts.css"/>
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>assets/css/header.css"/>
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>assets/css/article.css"/>
+    
     <title>Code Universe</title>
 </head>
 <body>
