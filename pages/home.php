@@ -94,31 +94,51 @@
       ?>
 
 
+<<<<<<< HEAD
       <!-- <div class="rows">
         <div class="tec tec-html">
           <span class="span">HTML</span>
+=======
+      <div class="rows">
+        <div class="menu-content01">
+          <div class="menu-content02">
+            <div class="tec tec-html">
+              <span class="span">HTML</span>
+            </div>
+            <div class="tec tec-css">
+              <span class="span">CSS</span>
+            </div>
+          </div>
+          <div class="menu-content02">
+            <div class="tec tec-js">
+              <span class="span">JAVASCRIPT</span>
+            </div>
+            <div class="tec tec-php">
+              <span class="span">PHP</span>
+            </div>
+          </div>
+>>>>>>> 4ccd23cbc371df7bd804184a8e2ecc3c1e91e8d7
         </div>
-        <div class="tec tec-css">
-          <span class="span">CSS</span>
+        
+        <div class="menu-content01">
+          <div class="menu-content02">
+            <div class="tec tec-java">
+              <span class="span">JAVA</span>
+            </div>
+            <div class="tec tec-python">
+              <span class="span">PYTHON</span>
+            </div>
+          </div>
+          <div class="menu-content02">
+            <div class="tec tec-sql">
+              <span class="span">SQL</span>
+            </div>
+            <div class="tec tec-mod_dados">
+              <span class="span">MODELAGEM DE DADOS</span>
+            </div>
+          </div>
         </div>
-        <div class="tec tec-js">
-          <span class="span">JAVASCRIPT</span>
-        </div>
-        <div class="tec tec-php">
-          <span class="span">PHP</span>
-        </div>
-        <div class="tec tec-java">
-          <span class="span">JAVA</span>
-        </div>
-        <div class="tec tec-python">
-          <span class="span">PYTHON</span>
-        </div>
-        <div class="tec tec-sql">
-          <span class="span">SQL</span>
-        </div>
-        <div class="tec tec-mod_dados">
-          <span class="span">MODELAGEM DE DADOS</span>
-        </div>
+        
       </div>
       -->
     </div> 
