@@ -25,7 +25,7 @@ function menuToggle() {
   if (windowWidth <= 999) {
     if (menuMobile.classList.contains("show")) {
       closeMenu();
-      enableDropdown(); // Habilita a funcionalidade do dropdown quando o menu está aberto
+      enableDropdown();
     } else {
       openMenu();
       mobileNavItems.innerHTML = navbar.querySelector(".nav-items").innerHTML;
@@ -37,7 +37,7 @@ function menuToggle() {
 }
 
 function enableDropdown() {
-  var menuToggleIcon = document.querySelector(".fa-bars"); // Seletor do ícone do menu-toggle
+  var menuToggleIcon = document.querySelector(".fa-bars");
   var dropdownItems = document.querySelector("ul.dropdown");
 
   menuToggleIcon.addEventListener("click", function () {
@@ -56,9 +56,9 @@ function openMenu() {
   var body = document.querySelector("body");
 
 
-  menuMobile.classList.add("show"); // Adiciona a classe show para exibir o menu
-  body.style.overflow = "hidden"; // Desabilita overflow
-  // Esconde a navbar
+  menuMobile.classList.add("show"); 
+  body.style.overflow = "hidden"; 
+
 }
 
 function closeMenu() {
@@ -66,15 +66,14 @@ function closeMenu() {
   var menuMobile = document.getElementById("menu-mobile");
   var body = document.querySelector("body");
 
-  ; // Exibe a navbar
-  menuMobile.classList.add("hide"); // Adiciona a classe hide para animação
-
-  body.style.overflow = "auto"; // Restaura overflow
+  ;
+  menuMobile.classList.add("hide"); 
+  body.style.overflow = "auto";
 
   setTimeout(function () {
-    menuMobile.classList.remove("hide"); // Remove a classe hide após a animação
-    menuMobile.classList.remove("show"); // Garante que a classe show seja removida
-  }, 500); // Tempo igual à duração da animação em milissegundos
+    menuMobile.classList.remove("hide");
+    menuMobile.classList.remove("show");
+  }, 500); 
 }
 
 window.addEventListener('resize', function () {
@@ -83,7 +82,6 @@ window.addEventListener('resize', function () {
   var windowWidth = window.innerWidth;
 
   if (windowWidth > 999 && menuMobile.classList.contains("show")) {
-    // Se a tela for maior que 999 pixels e o menu estiver visível, fecha o menu e exibe a navbar
     closeMenu();
   }
 });
@@ -92,12 +90,45 @@ document.addEventListener('DOMContentLoaded', function () {
   var menuMobile = document.getElementById("menu-mobile");
 
   menuMobile.addEventListener('click', function (event) {
-    // Verifica se o clique foi em um dos links desejados
+
     var clickedElement = event.target;
 
-    // Verifica se o elemento clicado é um link e se tem a classe 'close-menu'
     if (clickedElement.tagName === 'A' && clickedElement.classList.contains('close-menu')) {
-      closeMenu(); // Fecha o menu mobile
+      closeMenu();
     }
+  });
+});
+
+const input = document.querySelector('.input');
+
+input.addEventListener('input', function() {
+    const inputContainer = this.parentNode;
+    if (this.value !== '') {
+        inputContainer.classList.add('active');
+    } else {
+        inputContainer.classList.remove('active');
+    }
+});
+
+document.addEventListener('click', function (event) {
+  var menuMobile = document.getElementById("menu-mobile");
+  var body = document.querySelector("body");
+  var clickedElement = event.target;
+
+  // Verifica se o clique não é dentro do menu mobile nem no ícone do menu
+  if (!menuMobile.contains(clickedElement) && !clickedElement.classList.contains('fa-bars')) {
+    if (menuMobile.classList.contains("show")) {
+      closeMenu();
+      body.style.overflow = "auto";
+    }
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const icon = document.querySelector('.icon');
+  const form = document.querySelector('form');
+
+  icon.addEventListener('click', function() {
+    form.submit();
   });
 });

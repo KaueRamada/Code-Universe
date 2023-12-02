@@ -160,7 +160,7 @@ $(function() {
             else if(data.formName == 'user') imagePath = data.row.profile_photo;
             $('.preview-image label').empty();
             $('.preview-image .preview-image-content').remove();
-            $('.preview-image').append(`<div class="preview-image-content"><img src="${include_path+'admin/'+imagePath}" alt="PrÃ©via da imagem" /></div>`);
+            $('.preview-image').append(`<div class="preview-image-content"><img src="${include_path+'admin/'+imagePath}" alt="Prévia da imagem" /></div>`);
             
             localStorage.setItem('editing', 'true');
             localStorage.setItem('post', data.row.post); // post html for the TinyMCE editor

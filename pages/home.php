@@ -1,5 +1,12 @@
 <main>
-<?php include 'header.php'; ?> 
+  <?php include 'header.php'; ?>
+  <div class="loader">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+
 
   <!-- Carrosel -->
   <section class="carrossel" id="home">
@@ -35,19 +42,19 @@
     <div class="team-video"></div>
 
     <div class="rows">
-    <div class="row-img row-1">
-      <div alt="Programação" class="programmers-group">
-        <div class="text">
-          <p>Programação</p>
-          <span>Equipe responsável por toda a programação do site</span>
+      <div class="row-img row-1">
+        <div alt="Programação" class="programmers-group">
+          <div class="text">
+            <p>Programação</p>
+            <span>Equipe responsável por toda a programação do site</span>
+          </div>
         </div>
-      </div>
-      <div alt="Design" class="design-group">
-        <div class="text">
-          <p>Design</p>
-          <span>Equipe responsável pelo design do site</span>
+        <div alt="Design" class="design-group">
+          <div class="text">
+            <p>Design</p>
+            <span>Equipe responsável pelo design do site</span>
+          </div>
         </div>
-      </div>
       </div>
     </div>
 
@@ -73,33 +80,33 @@
 
     <div class="categories">
       <?php
-        $sql = $pdo->prepare("SELECT * FROM tb_categories");
-        $sql->execute();
-        if($sql->rowCount() == 0) {
-          echo "Nenhuma categoria cadastrada";
-        } else {
-          $categories = $sql->fetchAll(PDO::FETCH_ASSOC);
-          foreach($categories as $key => $value) {
-            $category = strtolower($value['name']);
-            echo '
-            <div class="tec '.$category.'">
-              <a href="posts?category='.$category.'">
-                <span class="span">'.$value['name'].'</span>
-                <img src="'.INCLUDE_PATH.$value['image'].'" alt="Logo" />
+      $sql = $pdo->prepare("SELECT * FROM tb_categories");
+      $sql->execute();
+      if ($sql->rowCount() == 0) {
+        echo "Nenhuma categoria cadastrada";
+      } else {
+        $categories = $sql->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($categories as $key => $value) {
+          $category = strtolower($value['name']);
+          echo '
+            <div class="tec ' . $category . '">
+              <a href="posts?category=' . $category . '">
+                <span class="span">' . $value['name'] . '</span>
+                <img src="' . INCLUDE_PATH . $value['image'] . '" alt="Logo" />
               </a>
             </div>
             ';
-          }
         }
+      }
       ?>
-    </div> 
+    </div>
   </section>
 </main>
 
 <footer id="footer">
   <div class="footer-content">
     <img src="img/logo.png" alt="" class="logo">
-    
+
     <div class="footer-menu01">
       <ul class="footer-menu">
         <p>Programação</p>
@@ -114,11 +121,11 @@
 
       <ul class="footer-menu">
         <p>Design</p>
-        <li class="footer-menu-item">Abner Procópio</li> 
+        <li class="footer-menu-item">Abner Procópio</li>
         <li class="footer-menu-item">Isabelle Oliveira</li>
       </ul>
     </div>
-    
+
     <div class="footer-menu02">
       <ul class="footer-menu">
         <p>Pesquisa</p>
