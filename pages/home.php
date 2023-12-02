@@ -1,12 +1,5 @@
 <main>
   <?php include 'header.php'; ?>
-  <div class="loader">
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-  </div>
-
 
   <!-- Carrosel -->
   <section class="carrossel" id="home">
