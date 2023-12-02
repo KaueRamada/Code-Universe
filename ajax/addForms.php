@@ -91,7 +91,8 @@
         $sql->execute();
         $users = $sql->fetchAll(PDO::FETCH_ASSOC);
         $data['success'] = true;
-        foreach($users as $key => $value) {
+
+        /*foreach($users as $key => $value) {
             if($value['user'] == $user) {
                 $data['success'] = false;
                 $data['error'] = "Nome de usuário inválido";
@@ -102,7 +103,7 @@
                 $data['error'] = "Email inválido";
                 break;
             }
-        }
+        }*/
 
         if($data['success']) {
             $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // password hashing
@@ -209,7 +210,8 @@
                 $sql->execute(array($id));
                 $users = $sql->fetchAll(PDO::FETCH_ASSOC);
                 $data['success'] = true;
-                foreach($users as $key => $value) {
+
+                /*foreach($users as $key => $value) {
                     if($value['user'] == $_POST['user']) {
                         $data['success'] = false;
                         $data['error'] = "Nome de usuário inválido";
@@ -220,12 +222,14 @@
                         $data['error'] = "Email inválido";
                         break;
                     }
-                }
+                }*/
                 
                 if($data['success']) { 
                     $sql = $pdo->prepare("UPDATE `".$tableName."` SET user = ?, email = ?, name = ?, role = ? WHERE id = ?");
                     $sql->execute(array($_POST['user'], $_POST['email'], $_POST['name'], $_POST['role'], $id));
+
                     // verify if a new image was uploaded
+                    $profile_photo = "";
                     if($hasImage) {
                         $profile_photo = $upload_dir.$_FILES['profile_photo']['name'];
                         $profilePhotoTmpName = $_FILES['profile_photo']['tmp_name'];
@@ -238,6 +242,14 @@
                         $sql = $pdo->prepare("UPDATE `".$tableName."` SET profile_photo = ? WHERE id = ?");
                         $sql->execute(array($profile_photo, $id));
                     }
+
+                    // updating sessions
+                    $_SESSION['myblog-user'] = $_POST['user'];
+                    $_SESSION['myblog-email'] = $_POST['email'];
+                    $_SESSION['myblog-name'] = $_POST['name'];
+                    $_SESSION['myblog-profile-photo'] = ($profile_photo != "") ? $profile_photo : $_SESSION['myblog-profile-photo'];
+                    $data['sessions'] = true;
+
                     $data['success'] = true;
                 }
             } catch(PDOExcetion $e) {
