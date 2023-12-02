@@ -1,6 +1,15 @@
 <main>
   <?php include 'header.php'; ?>
 
+  <div class="loader-container">
+    <div class="loader">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+  </div>
+
   <!-- Carrosel -->
   <section class="carrossel" id="home">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">

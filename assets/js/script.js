@@ -1,17 +1,17 @@
 $(function () {
-    // include path
-    const include_path = $('input[name="include_path"]').val();
+  // include path
+  const include_path = $('input[name="include_path"]').val();
 
-    // showing posts when clicking on post cards
-    $('.posts-content .post').on('click', function () {
-        $(this).find('a')[0].click();
-    })
+  // showing posts when clicking on post cards
+  $('.posts-content .post').on('click', function () {
+    $(this).find('a')[0].click();
+  })
 })
 
 function restart() {
-    document.addEventListener('click', () => {
-        location.reload()
-    })
+  document.addEventListener('click', () => {
+    location.reload()
+  })
 }
 
 // Menu Toggle
@@ -56,8 +56,8 @@ function openMenu() {
   var body = document.querySelector("body");
 
 
-  menuMobile.classList.add("show"); 
-  body.style.overflow = "hidden"; 
+  menuMobile.classList.add("show");
+  body.style.overflow = "hidden";
 
 }
 
@@ -67,13 +67,13 @@ function closeMenu() {
   var body = document.querySelector("body");
 
   ;
-  menuMobile.classList.add("hide"); 
+  menuMobile.classList.add("hide");
   body.style.overflow = "auto";
 
   setTimeout(function () {
     menuMobile.classList.remove("hide");
     menuMobile.classList.remove("show");
-  }, 500); 
+  }, 500);
 }
 
 window.addEventListener('resize', function () {
@@ -101,13 +101,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 const input = document.querySelector('.input');
 
-input.addEventListener('input', function() {
-    const inputContainer = this.parentNode;
-    if (this.value !== '') {
-        inputContainer.classList.add('active');
-    } else {
-        inputContainer.classList.remove('active');
-    }
+input.addEventListener('input', function () {
+  const inputContainer = this.parentNode;
+  if (this.value !== '') {
+    inputContainer.classList.add('active');
+  } else {
+    inputContainer.classList.remove('active');
+  }
 });
 
 document.addEventListener('click', function (event) {
@@ -124,11 +124,24 @@ document.addEventListener('click', function (event) {
   }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+// Enviar form com click
+document.addEventListener('DOMContentLoaded', function () {
   const icon = document.querySelector('.icon');
   const form = document.querySelector('form');
 
-  icon.addEventListener('click', function() {
+  icon.addEventListener('click', function () {
     form.submit();
   });
 });
+
+// Tela de carregamento
+window.addEventListener('beforeunload', function() {
+  const loader = document.querySelector('.loader-container');
+  loader.style.display = 'flex'; 
+});
+
+window.addEventListener('load', function() {
+  const loader = document.querySelector('.loader-container');
+  loader.style.display = 'none';
+});
+

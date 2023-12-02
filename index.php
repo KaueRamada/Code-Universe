@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>assets/css/posts.css"/>
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>assets/css/header.css"/>
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>assets/css/article.css"/>
-    
+    <link rel="shortcut icon" type="imagex/png" href="<?php echo INCLUDE_PATH; ?>assets/img/logo_sem_fundo.png">
     <title>Code Universe</title>
 </head>
 <body>

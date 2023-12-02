@@ -6,7 +6,6 @@
     $edit_form = (isset($_POST['edit_form'])) ? $_POST['edit_form'] : '';
     $edit_password = (isset($_POST['edit_password'])) ? $_POST['edit_password'] : '';
     $upload_dir = 'assets/uploads/';
-    $upload_categories = 'assets/img/logo-linguagens/';
 
     $data['ajax'] = true;
     $data['post'] = $_POST;
@@ -157,7 +156,7 @@
                 $sql->execute(array($_POST['name'], $id));
                 // verify if a new image was uploaded
                 if($hasImage) {
-                    $image = $$upload_categories.$_FILES['image']['name'];
+                    $image = $upload_dir.$_FILES['image']['name'];
                     $imageTmpName = $_FILES['image']['tmp_name'];
                     if(move_uploaded_file($imageTmpName, '../admin/'.$image)) {
                         $data['success'] = true;

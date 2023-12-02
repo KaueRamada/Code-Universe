@@ -246,13 +246,13 @@ section.content {
     overflow: hidden;
 }
 
-.menu-content01{
+.menu-content01 {
     display: flex;
     justify-content: center;
     /* width: 100%; */
 }
 
-.menu-content02{
+.menu-content02 {
     display: flex;
     flex-direction: initial;
     justify-content: center;
@@ -528,7 +528,7 @@ section.content {
 }
 
 @media screen and (max-width: 755px) {
-    .tec{
+    .tec {
         width: 120px;
         height: 120px;
     }
@@ -536,6 +536,7 @@ section.content {
 
 
 @media screen and (max-width: 640px) {
+
     /* Footer */
     .footer-content {
         align-items: center;
@@ -585,14 +586,14 @@ section.content {
 }
 
 @media screen and (max-width: 430px) {
-    .tec{
+    .tec {
         width: 90px;
         height: 90px;
     }
 }
 
 @media screen and (max-width: 400px) {
-    div.categories{
+    div.categories {
         margin-top: 30px;
     }
 }
@@ -613,7 +614,7 @@ section.content {
     .row-img .text {
         font-size: 14px;
     }
-    
+
     .row-img div:hover .text {
         font-size: 18px;
     }
@@ -633,8 +634,8 @@ section.content {
         font-size: 14px;
         height: 20px;
     }
-    
-    
+
+
     .row-img div:hover .text {
         font-size: 18px;
     }
@@ -653,7 +654,7 @@ section.content {
     .row-img .text {
         font-size: 14px;
     }
-    
+
     .row-img div:hover .text {
         font-size: 18px;
     }
@@ -672,7 +673,7 @@ section.content {
     .row-img .text {
         font-size: 12px;
     }
-    
+
     .row-img div:hover .text {
         font-size: 16px;
     }
@@ -691,8 +692,83 @@ section.content {
     .row-img .text {
         font-size: 12px;
     }
-    
+
     .row-img div:hover .text {
         font-size: 16px;
+    }
+}
+
+/* Loader */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader {
+    width: 3rem;
+    height: 3rem;
+    position: relative;
+    animation: spin 2s linear infinite;
+}
+
+.loader .circle {
+    width: 1.2rem;
+    height: 1.2rem;
+    background: linear-gradient(to right, var(--color1), var(--color2));
+    border-radius: 50%;
+    position: absolute;
+}
+
+.loader .circle:nth-child(1) {
+    top: 0;
+    left: 0;
+}
+
+.loader .circle:nth-child(2) {
+    top: 0;
+    right: 0;
+}
+
+.loader .circle:nth-child(3) {
+    bottom: 0;
+    left: 0;
+}
+
+.loader .circle:nth-child(4) {
+    bottom: 0;
+    right: 0;
+}
+
+@keyframes spin {
+    0% {
+        transform: scale(1) rotate(0);
+    }
+
+    20%,
+    25% {
+        transform: scale(1.3) rotate(90deg);
+    }
+
+    45%,
+    50% {
+        transform: scale(1) rotate(180deg);
+    }
+
+    70%,
+    75% {
+        transform: scale(1.3) rotate(270deg);
+    }
+
+    95%,
+    100% {
+        transform: scale(1) rotate(360deg);
     }
 }
