@@ -96,7 +96,7 @@
                     // manipulating ids and booleans
                     if($columnNames[$i] == 'image') {
                         $photoSrc = $value[$columnNames[$i]];
-                        $data['table'] .= '<td class="category photo"><img src="'.INCLUDE_PATH_ADMIN.$photoSrc.'" alt="foto da categoria" /></td>';
+                        $data['table'] .= '<td class="category photo"><img src="'.INCLUDE_PATH.$photoSrc.'" alt="foto da categoria" /></td>';
                     } else if($columnNames[$i] == 'category_id') {
                         $categoryId = $value['category_id'];
                         $sql = $pdo->prepare("SELECT name FROM `tb_categories` WHERE id = ?");

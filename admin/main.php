@@ -17,6 +17,7 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js"></script> <!-- TinyMCE jQuery integration -->
     <script src="https://kit.fontawesome.com/52201d9086.js" crossorigin="anonymous"></script> <!-- font awesome icons -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- chart.js -->
+    <link rel="shortcut icon" type="imagex/png" href="<?php echo INCLUDE_PATH; ?>assets/img/logo_sem_fundo.png">
     
     <title>Painel de Controle | Code Universe</title>
 </head>

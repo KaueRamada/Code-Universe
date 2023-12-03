@@ -1,5 +1,13 @@
 <main>
     <?php include 'header.php'; ?>
+    <div class="loader-container">
+        <div class="loader">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
     <section class="posts" id="postsSection">
         <h1 class="title">POSTAGENS</h1>
         <div class="posts-content">
