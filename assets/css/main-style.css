@@ -221,7 +221,6 @@ section.content {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* align-items: center; */
     width: 90%;
     max-width: 900px;
     color: white;
@@ -244,18 +243,6 @@ section.content {
     height: 28vh;
     border-radius: 100%;
     overflow: hidden;
-}
-
-.menu-content01 {
-    display: flex;
-    justify-content: center;
-    /* width: 100%; */
-}
-
-.menu-content02 {
-    display: flex;
-    flex-direction: initial;
-    justify-content: center;
 }
 
 .tec a {
@@ -295,85 +282,77 @@ section.content {
     object-fit: contain;
 }
 
-.tec-html {
-    background: url("../img/Conteúdo/Logo\ dos\ elementos/html.png") center/cover no-repeat;
-    box-shadow:
-        inset 0 0 5px #0026ff,
-        inset 0 0 15px #0026ff,
-        inset 0 0 15px #0026ff,
-        0 0 5px #0026ff,
-        0 0 15px #0026ff,
-        0 0 15px #0026ff;
+
+/* Menu Conteúdo */
+.content-menu-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    margin-bottom: 20px;
 }
 
-.tec-css {
-    background: url("../img/Conteúdo/Logo\ dos\ elementos/css.png") center/cover no-repeat;
-    box-shadow:
-        inset 0 0 5px #0026ff,
-        inset 0 0 15px #0026ff,
-        inset 0 0 15px #0026ff,
-        0 0 5px #0026ff,
-        0 0 15px #0026ff,
-        0 0 15px #0026ff;
+.content-menu-div .input-plus {
+    display: none;
 }
 
-.tec-js {
-    background: url("../img/Conteúdo/Logo\ dos\ elementos/javascript.png") center/cover no-repeat;
-    box-shadow:
-        inset 0 0 5px #0026ff,
-        inset 0 0 15px #0026ff,
-        inset 0 0 15px #0026ff,
-        0 0 5px #0026ff,
-        0 0 15px #0026ff,
-        0 0 15px #0026ff;
+.label-plus {
+    cursor: pointer;
+
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(165, 162, 162);
 }
 
-.tec-php {
-    background: url("../img/Conteúdo/Logo\ dos\ elementos/php.png") center/cover no-repeat;
-    box-shadow:
-        inset 0 0 5px #0026ff,
-        inset 0 0 15px #0026ff,
-        inset 0 0 15px #0026ff,
-        0 0 5px #0026ff,
-        0 0 15px #0026ff,
-        0 0 15px #0026ff;
+.menu-plus {
+    width: 100vw;
+    text-align: center;
+
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.tec-java {
-    background: url("../img/Conteúdo/Logo\ dos\ elementos/java.png") center/cover no-repeat;
-    box-shadow:
-        inset 0 0 5px #0026ff,
-        inset 0 0 15px #0026ff,
-        inset 0 0 15px #0026ff,
-        0 0 5px #0026ff,
-        0 0 15px #0026ff,
-        0 0 15px #0026ff;
+.input-plus:checked + .menu-plus .label-plus {
+    display: none;
 }
 
-.tec-python {
-    background: url("../img/Conteúdo/Logo\ dos\ elementos/python.png") center/cover no-repeat;
-    box-shadow:
-        inset 0 0 5px #0026ff,
-        inset 0 0 15px #0026ff,
-        inset 0 0 15px #0026ff,
-        0 0 5px #0026ff,
-        0 0 15px #0026ff,
-        0 0 15px #0026ff;
+.input-plus:checked + .categories .tec {
+    display: none;
 }
 
-.tec-sql {
-    background: url("../img/Conteúdo/Logo\ dos\ elementos/sql.png") center/cover no-repeat;
-    box-shadow:
-        inset 0 0 5px #0026ff,
-        inset 0 0 15px #0026ff,
-        inset 0 0 15px #0026ff,
-        0 0 5px #0026ff,
-        0 0 15px #0026ff,
-        0 0 15px #0026ff;
+.input-plus:checked + .menu-plus div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-.tec-mod_dados {
-    background: url("../img/Conteúdo/Logo\ dos\ elementos/modelagem_de_dados.png") center/cover no-repeat;
+.menu-itens {
+    display: none;
+    position: absolute;
+    z-index: 99999999;
+    align-items: center;
+
+    width: 100%;
+    height: 70vh;
+    background: #23232e;
+    border-radius: 15px;
+    overflow: auto;
+
+    justify-content: center;
+}
+
+.menu-menu-item {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+}
+
+.menu-plus .menu-itens .menu-item {
+    position: relative;
+    z-index: 3;
     box-shadow:
         inset 0 0 5px #0026ff,
         inset 0 0 15px #0026ff,
@@ -381,7 +360,75 @@ section.content {
         0 0 5px #0026ff,
         0 0 15px #0026ff,
         0 0 15px #0026ff;
+    border: 6px solid rgb(191, 230, 255);
+    margin: 15px;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 100%;
+    margin: 30px 20px;
+    overflow: hidden;
 }
+
+.menu-plus .menu-itens .menu-item a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.menu-plus .menu-itens .menu-item .span {
+    position: absolute;
+    z-index: 99999;
+    background-color: rgba(43, 43, 43, 0.8);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    text-transform: uppercase;
+}
+
+.menu-plus .menu-itens .menu-item:hover span {
+    height: 100%;
+    padding: 10px;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.menu-plus .menu-itens .menu-item img {
+    height: 70%;
+    object-fit: contain;
+}
+
+.menu-plus .menu-itens input{
+    display: none;
+}
+
+.input-voltar{
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(165, 162, 162);
+    cursor: pointer;
+    display: block;
+    margin: 30px;
+
+    width: 100%;
+    text-align: center;
+
+    background-color: #00000000;
+    border: #00000000;
+}
+
+ 
 
 /* Footer */
 #footer {
@@ -503,7 +550,19 @@ section.content {
     color: #511e8f;
 }
 
+
 /* Responsividade */
+@media screen and (max-height: 500px) {
+    .tec {
+        margin: 8px;
+    }
+
+    .menu-item {
+        width: 20vh;
+        height: 20vh;
+        margin: 8px;
+    }
+}
 
 @media screen and (max-width: 1000px) {
     .tec {
@@ -531,6 +590,10 @@ section.content {
     .tec {
         width: 120px;
         height: 120px;
+    }
+
+    .input-plus {
+        margin-bottom: 30px;
     }
 }
 
@@ -595,6 +658,10 @@ section.content {
 @media screen and (max-width: 400px) {
     div.categories {
         margin-top: 30px;
+    }
+
+    .content {
+        height: 180vh;
     }
 }
 
@@ -698,6 +765,16 @@ section.content {
     }
 }
 
+@media screen and (max-width: 270px) {
+    .footer-info{
+        display: none;
+    }
+
+    .footer-info p{
+        font-size: 8px;
+    }
+}
+
 /* Loader */
 .loader-container {
     position: fixed;
@@ -771,4 +848,18 @@ section.content {
     100% {
         transform: scale(1) rotate(360deg);
     }
+}
+
+/* Scroll */
+
+::-webkit-scrollbar{
+    background-color: #393E41;
+    width: 10px;
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #23232e;
+    border: 1px solid black;
+    border-radius: 2px;
 }
