@@ -284,11 +284,10 @@ section.content {
 
 
 /* Menu Conteúdo */
-.content-menu-div{
+.content-menu-div {
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 100%;
     margin-bottom: 20px;
 }
@@ -299,31 +298,33 @@ section.content {
 
 .label-plus {
     cursor: pointer;
-
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
-    color: rgb(165, 162, 162);
+    color: var(--light0);
+}
+
+.label-plus:hover{
+    color: var(--color2);
 }
 
 .menu-plus {
     width: 100vw;
     text-align: center;
-
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.input-plus:checked + .menu-plus .label-plus {
+.input-plus:checked+.menu-plus .label-plus {
     display: none;
 }
 
-.input-plus:checked + .categories .tec {
+.input-plus:checked+.categories .tec {
     display: none;
 }
 
-.input-plus:checked + .menu-plus div {
+.input-plus:checked+.menu-plus div {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -334,14 +335,15 @@ section.content {
     position: absolute;
     z-index: 99999999;
     align-items: center;
-
-    width: 100%;
+    width: 85vw;
     height: 70vh;
     background: #23232e;
-    border-radius: 15px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
     overflow: auto;
-
     justify-content: center;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .menu-menu-item {
@@ -362,8 +364,8 @@ section.content {
         0 0 15px #0026ff;
     border: 6px solid rgb(191, 230, 255);
     margin: 15px;
-    width: 20vh;
-    height: 20vh;
+    width: 28vh;
+    height: 28vh;
     border-radius: 100%;
     margin: 30px 20px;
     overflow: hidden;
@@ -408,27 +410,28 @@ section.content {
     object-fit: contain;
 }
 
-.menu-plus .menu-itens input{
+.menu-plus .menu-itens input {
     display: none;
 }
 
-.input-voltar{
+.input-voltar {
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
-    color: rgb(165, 162, 162);
+    color: var(--light0);
     cursor: pointer;
     display: block;
     margin: 30px;
-
     width: 100%;
     text-align: center;
-
     background-color: #00000000;
     border: #00000000;
 }
 
- 
+.input-voltar:hover{
+    color: var(--color2);
+}
+
 
 /* Footer */
 #footer {
@@ -766,11 +769,11 @@ section.content {
 }
 
 @media screen and (max-width: 270px) {
-    .footer-info{
+    .footer-info {
         display: none;
     }
 
-    .footer-info p{
+    .footer-info p {
         font-size: 8px;
     }
 }
@@ -852,13 +855,13 @@ section.content {
 
 /* Scroll */
 
-::-webkit-scrollbar{
-    background-color: #393E41;
+::-webkit-scrollbar {
+    background-color: #50424e;
     width: 10px;
     border-radius: 2px;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
     background-color: #23232e;
     border: 1px solid black;
     border-radius: 2px;

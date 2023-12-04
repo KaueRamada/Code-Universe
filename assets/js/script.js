@@ -145,3 +145,19 @@ window.addEventListener('load', function() {
   loader.style.display = 'none';
 });
 
+
+// Menu categorias
+
+const labelPlus = document.querySelector('.label-plus');
+
+labelPlus.addEventListener('click', function() {
+    window.location.href = '#content';
+    document.body.style.overflow = 'hidden';
+    document.querySelector('.menu-itens').style.overflow = 'auto';
+});
+
+
+// Voltar Menu categorias
+function voltar(){
+  location.reload();
+}
