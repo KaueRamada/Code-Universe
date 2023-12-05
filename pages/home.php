@@ -93,6 +93,7 @@
       } else if($sql->rowCount() > 8){
       ?>
         <div class="content-menu-div">
+<<<<<<< HEAD
           <!-- <div class="content-menu">
               <div class="line1"></div>
               <div class="line2"></div>
@@ -102,6 +103,12 @@
           <input type="checkbox" class="input-plus" id="plus">
           <div class="menu-plus" id="menuPlus">
             <label class="label-plus" for="plus">Mais Categorias</label>
+=======
+
+          <input type="checkbox" class="input-plus" id="plus">
+          <div class="menu-plus" id="menuPlus">
+            <label onclick="mostrarMais()" class="label-plus" for="plus">Mais Categorias</label>
+>>>>>>> c0d3ac64cb66b32bad0fe5120d057fb6109d9ff9
             <div class="menu-itens">
               <button class="input-voltar" onclick="voltar()">Voltar</button>
 

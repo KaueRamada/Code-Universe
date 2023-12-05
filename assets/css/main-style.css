@@ -221,7 +221,7 @@ section.content {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 90%;
+    width: 100%;
     max-width: 900px;
     color: white;
     font-size: 24px;
@@ -239,8 +239,8 @@ section.content {
         0 0 15px #0026ff;
     border: 6px solid rgb(191, 230, 255);
     margin: 15px;
-    width: 28vh;
-    height: 28vh;
+    width: 25vh;
+    height: 25vh;
     border-radius: 100%;
     overflow: hidden;
 }
@@ -555,23 +555,148 @@ section.content {
 
 
 /* Responsividade */
-@media screen and (max-height: 500px) {
+@media screen and (min-width: 1500px) {
     .tec {
-        margin: 8px;
-    }
-
-    .menu-item {
         width: 20vh;
         height: 20vh;
-        margin: 8px;
+    }
+    
+    .menu-plus .menu-itens .menu-item {
+        width: 18vh;
+        height: 18vh;
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1500px) {
     .tec {
+        width: 22vh;
+        height: 22vh;
+    }
+    
+    .menu-plus .menu-itens .menu-item {
+        width: 18vh;
+        height: 18vh;
+    }
+}
+
+@media screen and (max-width: 999px) {
+    .tec {
+        width: 19vh;
+        height: 19vh;
+    }
+    
+    .menu-plus .menu-itens .menu-item {
+        width: 18vh;
+        height: 18vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tec {
+        width: 19vh;
+        height: 19vh;
+    }
+    
+    .menu-plus .menu-itens .menu-item {
+        width: 18vh;
+        height: 18vh;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .tec {
+        width: 12vh;
+        height: 12vh;
+    }
+    
+    .menu-plus .menu-itens .menu-item {
+        width: 18vh;
+        height: 18vh;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .tec {
+        width: 10vh;
+        height: 10vh;
+    }
+    
+    .menu-plus .menu-itens .menu-item {
+        width: 18vh;
+        height: 18vh;
+    }
+}
+
+
+/* @media screen and (max-height: 1000px) {
+
+    @media screen and (min-width: 1000px) {
+        .tec {
+            width: 30vh;
+            height: 30vh;
+        }
+        
+        .menu-plus .menu-itens .menu-item {
+            width: 30vh;
+            height: 30vh;
+        }
+    }
+    
+    @media screen and (max-width: 999px) {
+        .tec {
+            width: 24vh;
+            height: 24vh;
+        }
+        
+        .menu-plus .menu-itens .menu-item {
+            width: 24vh;
+            height: 24vh;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .tec {
+            width: 22vh;
+            height: 22vh;
+        }
+        
+        .menu-plus .menu-itens .menu-item {
+            width: 22vh;
+            height: 22vh;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .tec {
+            width: 18vh;
+            height: 18vh;
+        }
+        
+        .menu-plus .menu-itens .menu-item {
+            width: 18vh;
+            height: 18vh;
+        }
+    }
+
+    @media screen and (max-width: 375px) {
+        .tec {
+            width: 15vh;
+            height: 15vh;
+        }
+        
+        .menu-plus .menu-itens .menu-item {
+            width: 20vh;
+            height: 20vh;
+        }
+    }
+} */
+
+
+@media screen and (max-width: 1000px) {
+    /* .tec {
         width: 140px;
         height: 140px;
-    }
+    } */
 
     #footer .footer-content {
         flex-direction: column;
@@ -589,17 +714,53 @@ section.content {
     }
 }
 
-@media screen and (max-width: 755px) {
-    .tec {
-        width: 120px;
-        height: 120px;
+@media screen and (max-width: 999px) {
+
+    .row-img .programmers-group,
+    .design-group,
+    .search-group,
+    .apresentation-group {
+        width: 35vw;
+        height: 20vw;
+    }
+}
+
+@media screen and (max-width: 860px) {
+
+    .row-img .text {
+        font-size: 14px;
     }
 
+    .row-img div:hover .text {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 768px) {
     .input-plus {
         margin-bottom: 30px;
     }
 }
 
+@media screen and (max-width: 680px) {
+
+    .row-img .programmers-group,
+    .design-group,
+    .search-group,
+    .apresentation-group {
+        width: 38vw;
+        height: 25vw;
+    }
+
+    .row-img .text {
+        font-size: 14px;
+        height: 20px;
+    }
+
+    .row-img div:hover .text {
+        font-size: 18px;
+    }
+}
 
 @media screen and (max-width: 640px) {
 
@@ -639,79 +800,9 @@ section.content {
     .rights {
         display: none;
     }
-
-    /* Sction Conteúdo */
-    .tec {
-        width: 100px;
-        height: 100px;
-    }
-
-    .menu-content02 {
-        flex-wrap: wrap;
-    }
 }
 
-@media screen and (max-width: 430px) {
-    .tec {
-        width: 90px;
-        height: 90px;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    div.categories {
-        margin-top: 30px;
-    }
-
-    .content {
-        height: 180vh;
-    }
-}
-
-@media screen and (max-width: 999px) {
-
-    .row-img .programmers-group,
-    .design-group,
-    .search-group,
-    .apresentation-group {
-        width: 35vw;
-        height: 20vw;
-    }
-}
-
-@media screen and (max-width: 860px) {
-
-    .row-img .text {
-        font-size: 14px;
-    }
-
-    .row-img div:hover .text {
-        font-size: 18px;
-    }
-}
-
-@media screen and (max-width: 680px) {
-
-    .row-img .programmers-group,
-    .design-group,
-    .search-group,
-    .apresentation-group {
-        width: 38vw;
-        height: 25vw;
-    }
-
-    .row-img .text {
-        font-size: 14px;
-        height: 20px;
-    }
-
-
-    .row-img div:hover .text {
-        font-size: 18px;
-    }
-}
-
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 480px) {
 
     .row-img .programmers-group,
     .design-group,
@@ -747,9 +838,17 @@ section.content {
     .row-img div:hover .text {
         font-size: 16px;
     }
+
+    div.categories {
+        margin-top: 30px;
+    }
+
+    .content {
+        height: 180vh;
+    }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
 
     .row-img .programmers-group,
     .design-group,
