@@ -135,13 +135,45 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Tela de carregamento
-window.addEventListener('beforeunload', function() {
+window.addEventListener('beforeunload', function () {
   const loader = document.querySelector('.loader-container');
-  loader.style.display = 'flex'; 
+  loader.style.display = 'flex';
 });
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   const loader = document.querySelector('.loader-container');
   loader.style.display = 'none';
 });
 
+
+// Menu categorias
+
+const labelPlus = document.querySelector('.label-plus');
+
+labelPlus.addEventListener('click', function () {
+  window.location.href = '#content';
+  document.body.style.overflow = 'hidden';
+  document.querySelector('.menu-itens').style.overflow = 'auto';
+});
+
+
+// Voltar Menu categorias
+function voltar() {
+  location.reload();
+}
+
+// Menu categorias navbar
+
+function openMenuContent(){
+  const menuPlus = document.querySelector('.menu-plus div');
+  const labelPlus = document.querySelector('.menu-plus .label-plus');
+  const categoriesTec = document.querySelector('.categories .tec');
+
+  labelPlus.style.display = 'none';
+  categoriesTec.style.display = 'none';
+  menuPlus.style.display = "flex";
+  menuPlus.style.flexWrap = "wrap";
+  menuPlus.style.alignItems = "center";
+  document.body.style.overflow = 'hidden';
+  document.querySelector('.menu-itens').style.overflow = 'auto';
+}
