@@ -150,14 +150,22 @@ window.addEventListener('load', function () {
 
 const labelPlus = document.querySelector('.label-plus');
 
+<<<<<<< HEAD
 labelPlus.addEventListener('click', function () {
   window.location.href = '#content';
   document.body.style.overflow = 'hidden';
   document.querySelector('.menu-itens').style.overflow = 'auto';
+=======
+labelPlus.addEventListener('click', function() {
+    window.location.href = '#content';
+    document.body.style.overflow = 'hidden';
+    document.querySelector('.menu-itens').style.overflow = 'auto';
+>>>>>>> 7f50f56560dc30d1d701a6fec290607ba18c3a3f
 });
 
 
 // Voltar Menu categorias
+<<<<<<< HEAD
 function voltar() {
   location.reload();
 }
@@ -176,4 +184,8 @@ function openMenuContent(){
   menuPlus.style.alignItems = "center";
   document.body.style.overflow = 'hidden';
   document.querySelector('.menu-itens').style.overflow = 'auto';
+=======
+function voltar(){
+  location.reload();
+>>>>>>> 7f50f56560dc30d1d701a6fec290607ba18c3a3f
 }

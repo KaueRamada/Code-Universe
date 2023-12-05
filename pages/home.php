@@ -100,7 +100,11 @@
             </div> -->
 
           <input type="checkbox" class="input-plus" id="plus">
+<<<<<<< HEAD
           <div class="menu-plus" id="menuPlus">
+=======
+          <div class="menu-plus">
+>>>>>>> 7f50f56560dc30d1d701a6fec290607ba18c3a3f
             <label class="label-plus" for="plus">Mais Categorias</label>
             <div class="menu-itens">
               <button class="input-voltar" onclick="voltar()">Voltar</button>
