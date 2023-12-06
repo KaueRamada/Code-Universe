@@ -14,16 +14,9 @@
             <?php
             $searchTerm = isset($_GET['text']) ? $_GET['text'] : '';
 
-<<<<<<< HEAD
             function calculateSoundex($term)
             {
                 return metaphone($term);
-=======
-            // Função para calcular o Soundex aproximado para o termo de busca
-            function calculateSoundex($term)
-            {
-                return metaphone($term); // Pode usar 'mb_metaphone' se estiver disponível
->>>>>>> c0d3ac64cb66b32bad0fe5120d057fb6109d9ff9
             }
 
             $searchSoundex = calculateSoundex($searchTerm);
@@ -34,7 +27,6 @@
             if (!empty($searchTerm)) {
                 // Calcular o Soundex do termo de busca
                 $searchSoundex = calculateSoundex($searchTerm);
-<<<<<<< HEAD
 
                 if (!empty($categoryFilter)) {
                     // Procurar pela categoria específica
@@ -46,17 +38,6 @@
                     $sql->execute(array($searchTerm, $categoryId));
                 } else {
                     // Buscar apenas pelo termo de pesquisa
-=======
-
-                if (!empty($categoryFilter)) {
-                    $sql = $pdo->prepare("SELECT id FROM `tb_categories` WHERE name LIKE ?");
-                    $sql->execute(array('%' . $categoryFilter . '%'));
-                    $categoryId = $sql->fetchColumn();
-
-                    $sql = $pdo->prepare("SELECT * FROM `tb_posts` WHERE (SOUNDEX(title) = SOUNDEX(?) OR category_id = ?) AND published = 1");
-                    $sql->execute(array($searchTerm, $categoryId));
-                } else {
->>>>>>> c0d3ac64cb66b32bad0fe5120d057fb6109d9ff9
                     $sql = $pdo->prepare("SELECT * FROM `tb_posts` WHERE SOUNDEX(title) = SOUNDEX(?) OR category_id IN (SELECT id FROM `tb_categories` WHERE name LIKE ?) AND published = 1");
                     $sql->execute(array($searchTerm, '%' . $searchTerm . '%'));
                 }

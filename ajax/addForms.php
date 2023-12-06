@@ -47,7 +47,7 @@
 
         $thumbnail = $upload_dir.$_FILES['thumbnail']['name'];
         $thumbnailTmpName = $_FILES['thumbnail']['tmp_name'];
-        if(move_uploaded_file($thumbnailTmpName, '../'.$thumbnail)) {
+        if(move_uploaded_file($thumbnailTmpName, '../admin/'.$thumbnail)) {
             $data['success'] = true;
         } else {
             $data['success'] = false;
