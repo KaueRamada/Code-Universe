@@ -162,6 +162,11 @@ function voltar() {
   location.reload();
 }
 
+function mostrarMais() {
+  const check = document.querySelector('.categories .tec');
+  check.style.display = 'none';
+}
+
 // Menu categorias navbar
 
 function openMenuContent(){

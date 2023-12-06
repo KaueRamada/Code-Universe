@@ -59,8 +59,7 @@ main {
 
 /* Section Equipe */
 
-.rows,
-.categories {
+.rows {
     margin-top: 70px;
     width: 100%;
     display: flex;
@@ -197,9 +196,10 @@ main {
 /* Section Conteúdo */
 section.content {
     width: 100%;
-    height: 100vh;
+    height: 120vh;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 2;
@@ -209,7 +209,7 @@ section.content {
 .content-video {
     z-index: 2;
     width: 100%;
-    height: 100vh;
+    height: 120vh;
     background: url("../img/Conteúdo/Fundo/fundo_com_icones.gif") center/cover no-repeat;
     position: absolute;
 }
@@ -217,11 +217,14 @@ section.content {
 .categories {
     position: absolute;
     z-index: 999;
+    width: 80%;
+
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    width: 90%;
-    max-width: 900px;
+    align-items: center;
+
     color: white;
     font-size: 24px;
 }
@@ -238,10 +241,14 @@ section.content {
         0 0 15px #0026ff;
     border: 6px solid rgb(191, 230, 255);
     margin: 15px;
-    width: 28vh;
-    height: 28vh;
+    width: 16vw;
+    height: 16vw;
     border-radius: 100%;
     overflow: hidden;
+}
+
+.opa {
+    white-space: normal
 }
 
 .tec a {
@@ -363,8 +370,8 @@ section.content {
         0 0 15px #0026ff;
     border: 6px solid rgb(191, 230, 255);
     margin: 15px;
-    width: 28vh;
-    height: 28vh;
+    width: 12vw;
+    height: 12vw;
     border-radius: 100%;
     margin: 30px 20px;
     overflow: hidden;
@@ -554,24 +561,25 @@ section.content {
 
 
 /* Responsividade */
-@media screen and (max-height: 500px) {
-    .tec {
-        margin: 8px;
-    }
 
-    .menu-item {
-        width: 20vh;
-        height: 20vh;
-        margin: 8px;
+@media screen and (max-width: 400px) {
+    /* .categories {
+        width: 100%;
+    } */
+    
+    .tec {
+        width: 24vw;
+        height: 24vw;
+    }
+    
+    .menu-plus .menu-itens .menu-item {
+        width: 20vw;
+        height: 20vw;
     }
 }
 
-@media screen and (max-width: 1000px) {
-    .tec {
-        width: 140px;
-        height: 140px;
-    }
 
+@media screen and (max-width: 1000px) {
     #footer .footer-content {
         flex-direction: column;
     }
@@ -588,17 +596,53 @@ section.content {
     }
 }
 
-@media screen and (max-width: 755px) {
-    .tec {
-        width: 120px;
-        height: 120px;
+@media screen and (max-width: 999px) {
+
+    .row-img .programmers-group,
+    .design-group,
+    .search-group,
+    .apresentation-group {
+        width: 35vw;
+        height: 20vw;
+    }
+}
+
+@media screen and (max-width: 860px) {
+
+    .row-img .text {
+        font-size: 14px;
     }
 
+    .row-img div:hover .text {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 768px) {
     .input-plus {
         margin-bottom: 30px;
     }
 }
 
+@media screen and (max-width: 680px) {
+
+    .row-img .programmers-group,
+    .design-group,
+    .search-group,
+    .apresentation-group {
+        width: 38vw;
+        height: 25vw;
+    }
+
+    .row-img .text {
+        font-size: 14px;
+        height: 20px;
+    }
+
+    .row-img div:hover .text {
+        font-size: 18px;
+    }
+}
 
 @media screen and (max-width: 640px) {
 
@@ -638,79 +682,9 @@ section.content {
     .rights {
         display: none;
     }
-
-    /* Sction Conteúdo */
-    .tec {
-        width: 100px;
-        height: 100px;
-    }
-
-    .menu-content02 {
-        flex-wrap: wrap;
-    }
 }
 
-@media screen and (max-width: 430px) {
-    .tec {
-        width: 90px;
-        height: 90px;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    div.categories {
-        margin-top: 30px;
-    }
-
-    .content {
-        height: 180vh;
-    }
-}
-
-@media screen and (max-width: 999px) {
-
-    .row-img .programmers-group,
-    .design-group,
-    .search-group,
-    .apresentation-group {
-        width: 35vw;
-        height: 20vw;
-    }
-}
-
-@media screen and (max-width: 860px) {
-
-    .row-img .text {
-        font-size: 14px;
-    }
-
-    .row-img div:hover .text {
-        font-size: 18px;
-    }
-}
-
-@media screen and (max-width: 680px) {
-
-    .row-img .programmers-group,
-    .design-group,
-    .search-group,
-    .apresentation-group {
-        width: 38vw;
-        height: 25vw;
-    }
-
-    .row-img .text {
-        font-size: 14px;
-        height: 20px;
-    }
-
-
-    .row-img div:hover .text {
-        font-size: 18px;
-    }
-}
-
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 480px) {
 
     .row-img .programmers-group,
     .design-group,
@@ -746,9 +720,17 @@ section.content {
     .row-img div:hover .text {
         font-size: 16px;
     }
+
+    div.categories {
+        margin-top: 30px;
+    }
+
+    .content {
+        height: 180vh;
+    }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
 
     .row-img .programmers-group,
     .design-group,

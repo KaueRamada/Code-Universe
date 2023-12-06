@@ -1,14 +1,14 @@
 <main>
   <?php include 'header.php'; ?>
 
-  <div class="loader-container">
+  <!-- <div class="loader-container">
     <div class="loader">
       <div class="circle"></div>
       <div class="circle"></div>
       <div class="circle"></div>
       <div class="circle"></div>
     </div>
-  </div>
+  </div> -->
 
   <!-- Carrosel -->
   <section class="carrossel" id="home">
@@ -88,20 +88,18 @@
       $sql2 = $pdo->prepare("SELECT * FROM tb_categories");
       $sql2->execute();
 
-      if ($sql->rowCount() == 0) {
+      if ($sql->rowCount() == 0)
+      {
         echo "Nenhuma categoria cadastrada";
-      } else if($sql->rowCount() > 8){
+      }
+      else if($sql->rowCount() > 8)
+      {
       ?>
         <div class="content-menu-div">
-          <!-- <div class="content-menu">
-              <div class="line1"></div>
-              <div class="line2"></div>
-              <div class="line3"></div>
-            </div> -->
 
           <input type="checkbox" class="input-plus" id="plus">
           <div class="menu-plus" id="menuPlus">
-            <label class="label-plus" for="plus">Mais Categorias</label>
+            <label onclick="mostrarMais()" class="label-plus" for="plus">Mais Categorias</label>
             <div class="menu-itens">
               <button class="input-voltar" onclick="voltar()">Voltar</button>
 
@@ -110,18 +108,20 @@
                 $contConteudo = 0;
 
                 $categories1 = $sql1->fetchAll(PDO::FETCH_ASSOC);
-                foreach ($categories1 as $key => $value) {
-                  if ($contConteudo >= 8) {
+                foreach ($categories1 as $key => $value)
+                {
+                  if ($contConteudo >= 8)
+                  {
                     $category = strtolower($value['name']);
 
-                ?>
-                    <div class="menu-item <?php echo $category; ?>">
-                      <a href="posts?category=<?php echo $category; ?>">
-                        <span class="span"><?php echo $value['name']; ?></span>
-                        <img src="<?php echo INCLUDE_PATH . $value['image']; ?>" alt="Logo" />
-                      </a>
-                    </div>
-                <?php
+                    ?>
+                      <div class="menu-item <?php echo $category; ?>">
+                        <a href="posts?category=<?php echo $category; ?>">
+                          <span class="span"><?php echo $value['name']; ?></span>
+                          <img src="<?php echo INCLUDE_PATH . $value['image']; ?>" alt="Logo" />
+                        </a>
+                      </div>
+                    <?php
                   }
                   $contConteudo++;
                 }
@@ -135,42 +135,74 @@
         $contConteudo = 0;
 
         $categories2 = $sql2->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($categories2 as $key => $value) {
+        foreach ($categories2 as $key => $value)
+        {
           $category = strtolower($value['name']);
 
           if ($contConteudo >= 8) break;
 
-        ?>
-          <div class="tec <?php echo $category; ?>">
-            <a href="posts?category=<?php echo $category; ?>">
-              <span class="span"><?php echo $value['name']; ?></span>
-              <img src="<?php echo INCLUDE_PATH . $value['image']; ?>" alt="Logo" />
-            </a>
-          </div>
-      <?php
-
           $contConteudo++;
+
+          if ($contConteudo == 4)
+          {
+            ?>
+              <div class="tec <?php echo $category; ?> opa">
+                <a href="posts?category=<?php echo $category; ?>">
+                  <span class="span"><?php echo $value['name']; ?></span>
+                  <img src="<?php echo INCLUDE_PATH . $value['image']; ?>" alt="Logo" />
+                </a>
+              </div>
+            <?php
+          }
+          else
+          {
+            ?>
+              <div class="tec <?php echo $category; ?>">
+                <a href="posts?category=<?php echo $category; ?>">
+                  <span class="span"><?php echo $value['name']; ?></span>
+                  <img src="<?php echo INCLUDE_PATH . $value['image']; ?>" alt="Logo" />
+                </a>
+              </div>
+            <?php
+          }
         }
-      }else{
+      }
+      else
+      {
         
         $contConteudo = 0;
 
         $categories2 = $sql2->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($categories2 as $key => $value) {
+        foreach ($categories2 as $key => $value)
+        {
           $category = strtolower($value['name']);
 
           if ($contConteudo >= 8) break;
 
-        ?>
-          <div class="tec <?php echo $category; ?>">
-            <a href="posts?category=<?php echo $category; ?>">
-              <span class="span"><?php echo $value['name']; ?></span>
-              <img src="<?php echo INCLUDE_PATH . $value['image']; ?>" alt="Logo" />
-            </a>
-          </div>
-      <?php
-
           $contConteudo++;
+
+          if ($contConteudo == 4)
+          {
+            ?>
+              <div class="tec <?php echo $category; ?> opa">
+                <a href="posts?category=<?php echo $category; ?>">
+                  <span class="span"><?php echo $value['name']; ?></span>
+                  <img src="<?php echo INCLUDE_PATH . $value['image']; ?>" alt="Logo" />
+                </a>
+              </div>
+            <?php
+          }
+          else
+          {
+            ?>
+              <div class="tec <?php echo $category; ?>">
+                <a href="posts?category=<?php echo $category; ?>">
+                  <span class="span"><?php echo $value['name']; ?></span>
+                  <img src="<?php echo INCLUDE_PATH . $value['image']; ?>" alt="Logo" />
+                </a>
+              </div>
+            <?php
+          }
         }
       }
       ?>
