@@ -562,14 +562,14 @@ section.content {
 
 /* Responsividade */
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 800px) {
     /* .categories {
         width: 100%;
     } */
     
     .tec {
-        width: 24vw;
-        height: 24vw;
+        width: 26vw;
+        height: 26vw;
     }
     
     .menu-plus .menu-itens .menu-item {
