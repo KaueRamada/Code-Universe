@@ -3,9 +3,9 @@
     date_default_timezone_set('America/Sao_Paulo');
 
     /* website path */
-    define('INCLUDE_PATH', 'http://localhost/www/Code-Universe/');
+    define('INCLUDE_PATH', 'http://localhost/Code-Universe/');
 
-    define('INCLUDE_PATH_ADMIN', 'http://localhost/www/Code-Universe/admin/');
+    define('INCLUDE_PATH_ADMIN', 'http://localhost/Code-Universe/admin/');
 
     /* database connection */
     define('HOST', 'localhost');

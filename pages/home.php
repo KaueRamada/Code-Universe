@@ -23,10 +23,10 @@
           <img src="<?php echo INCLUDE_PATH; ?>assets/img/Carrossel/carrossel01.png" class="d-block" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="<?php echo INCLUDE_PATH; ?>assets/img/Carrossel/carrossel02.png" style="width: 98.75vw;" class="d-block" alt="...">
+          <img src="<?php echo INCLUDE_PATH; ?>assets/img/Carrossel/carrossel02.png" class="d-block" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="<?php echo INCLUDE_PATH; ?>assets/img/Carrossel/carrossel03.png" style="width: 98.75vw;" class="d-block" alt="...">
+          <img src="<?php echo INCLUDE_PATH; ?>assets/img/Carrossel/carrossel03.png" class="d-block" alt="...">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
