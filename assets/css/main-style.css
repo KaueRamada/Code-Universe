@@ -342,7 +342,7 @@ section.content {
     z-index: 99999999;
     align-items: center;
     width: 85vw;
-    height: 70vh;
+    height: 80vh;
     background: #23232e;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
@@ -370,8 +370,8 @@ section.content {
         0 0 15px #0026ff;
     border: 6px solid rgb(191, 230, 255);
     margin: 15px;
-    width: 12vw;
-    height: 12vw;
+    width: 16vw;
+    height: 16vw;
     border-radius: 100%;
     margin: 30px 20px;
     overflow: hidden;

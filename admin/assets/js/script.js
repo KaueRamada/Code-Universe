@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
     // include path
     const include_path = $('input[name="include_path"]').val();
 
@@ -7,21 +7,21 @@ $(function () {
         $('header ul li.action').off('click');
         $('header ul.dropdown').off('click');
 
-        $('header ul li.action').hover(function (e) {
+        $('header ul li.action').hover(function(e) {
             $('header ul.dropdown').hide();
             $('header ul.dropdown').eq($(this).attr('dropdown')).stop().slideDown(200);
             e.stopPropagation();
-        }, function () {
+        }, function() {
             $('header ul.dropdown').eq($(this).attr('dropdown')).stop().slideUp(100);
         })
 
-        $('header ul.dropdown').hover(function (e) {
+        $('header ul.dropdown').hover(function(e) {
             e.stopPropagation();
-        }, function () {
+        }, function() {
             $(this).stop().slideUp(100);
         })
 
-        $('header ul li.action a').click(function (e) {
+        $('header ul li.action a').click(function(e) {
             e.preventDefault();
         })
     }
@@ -32,7 +32,7 @@ $(function () {
         $('header ul li.action').off('mouseenter mouseleave');
         $('header ul.dropdown').off('mouseenter mouseleave');
 
-        $('header ul li.mobile a').on('click', function (e) {
+        $('header ul li.mobile a').on('click', function(e) {
             e.preventDefault();
         })
     }
@@ -48,19 +48,19 @@ $(function () {
     function closeNav() {
         $('.background').fadeOut(200);
         $('header .menu').animate({ right: '-350px' }, 300);
-        setTimeout(function () {
+        setTimeout(function() {
             $('header .menu').toggleClass('mobile');
         }, 300);
         desktopMenu();
     }
 
     var isNavOpen = false;
-    $('.menu-toggle').click(function (e) {
+    $('.menu-toggle').click(function(e) {
         e.stopPropagation();
         $(this).toggleClass('active');
 
         isNavOpen = (isNavOpen) ? false : true;
-        if (isNavOpen) {
+        if(isNavOpen) {
             openNav();
         } else {
             closeNav();
@@ -68,16 +68,16 @@ $(function () {
     })
 
     // click on the body to close the mobile menu
-    $('header').click(function (e) {
+    $('header').click(function(e) {
         e.stopPropagation();
     })
 
-    $('header .menu').click(function (e) {
+    $('header .menu').click(function(e) {
         e.stopPropagation();
     })
 
-    $('body').click(function (e) {
-        if (isNavOpen) {
+    $('body').click(function(e) {
+        if(isNavOpen) {
             $('.menu-toggle').removeClass('active');
             closeNav();
             isNavOpen = false;
@@ -89,7 +89,7 @@ $(function () {
     // function to get data through an ajax request
     function getData(url) {
         return $.ajax({
-            url: include_path + url,
+            url: include_path+url,
             method: 'post',
             dataType: 'json'
         });
@@ -101,21 +101,21 @@ $(function () {
     let index;
 
     // edit and delete data
-
+    
     function editField(actionData) {
         index = (index == undefined) ? 5 : index;
-        let addIndex = index - 1;
+        let addIndex = index-1;
         $(`.menu ul.dropdown li a[index=${addIndex}]`).trigger('click');
-        form.removeClass('add');
+        form.removeClass('add'); 
         form.addClass('edit');
-        $('.action-window .title').text('Editar ' + $(`ul.dropdown li a[index=${addIndex}]`).text().split(' ')[1]);
+        $('.action-window .title').text('Editar '+$(`ul.dropdown li a[index=${addIndex}]`).text().split(' ')[1]); 
 
         $.ajax({
-            url: include_path + 'ajax/editForms.php',
+            url: include_path+'ajax/editForms.php',
             method: 'post',
             dataType: 'json',
             data: actionData
-        }).done(function (data) {
+        }).done(function(data) {
             form.append('<input type="hidden" name="edit_form" value="true" />');
             form.append(`<input type="hidden" name="index" value="${data.index}" />`);
             form.append(`<input type="hidden" name="table" value="${data.table}" />`);
@@ -125,14 +125,14 @@ $(function () {
             $('input[name="password"]').remove();
 
             // creation date and last update on edit post form
-            if (actionData.formName == 'post') {
-                form.prepend(`<div class="info last">Ultima: ${data.row.last_update}</div>`);
-                form.prepend(`<div class="info">Data de criação: ${data.row.creation_date}</div>`);
-                form.prepend(`<div class="info info-author"><img src="${include_path + 'admin/' + data.author.profile_photo}" alt="Foto de perfil do autor" />${data.author.name}</div>`);
+            if(actionData.formName == 'post') {
+                form.prepend(`<div class="info last">Ãšltima atualizaÃ§Ã£o: ${data.row.last_update}</div>`);
+                form.prepend(`<div class="info">Data de criaÃ§Ã£o: ${data.row.creation_date}</div>`);
+                form.prepend(`<div class="info info-author"><img src="${include_path+'admin/'+data.author.profile_photo}" alt="Foto de perfil do autor" />${data.author.name}</div>`);
             }
 
             // save post as a draft
-            $('input[name="save_draft"]').click(function () {
+            $('input[name="save_draft"]').click(function() {
                 $('input[name="draft"]').val('true');
             })
 
@@ -143,56 +143,49 @@ $(function () {
             $('input[name="name"]').val(data.row.name);
 
             console.log(data.row.role)
-            $('form.edit select[name="role"] option[value="' + data.row.role + '"]').attr('selected', 'selected');
-            if (data.dashboard) {
+            $('form.edit select[name="role"] option[value="'+data.row.role+'"]').attr('selected', 'selected');
+            if(data.dashboard) {
                 $('form.edit select[name="role"]').attr('disabled', 'disabled');
                 form.append(`<input type="hidden" name="role" value="${data.row.role}" />`);
             }
 
-            $('form.edit select[name="category_id"] option[value="' + data.row.category_id + '"]').attr('selected', 'selected');
+            $('form.edit select[name="category_id"] option[value="'+data.row.category_id+'"]').attr('selected', 'selected');
             $('input[name="title"]').val(data.row.title);
             $('input[name="subtitle"]').val(data.row.subtitle);
-
+            
             // preview image
             let imagePath = '';
-            if (data.formName === 'category') {
-                imagePath = data.row.image;
-            } else {
-                // Para posts e usuários, mantenha o caminho completo
-                if (data.formName === 'post') {
-                    imagePath = 'admin/' + data.row.thumbnail;
-                } else if (data.formName === 'user') {
-                    imagePath = 'admin/' + data.row.profile_photo;
-                }
-            }
+            if(data.formName == 'category') imagePath = data.row.image;
+            else if(data.formName == 'post') imagePath = data.row.thumbnail;
+            else if(data.formName == 'user') imagePath = data.row.profile_photo;
             $('.preview-image label').empty();
             $('.preview-image .preview-image-content').remove();
-            $('.preview-image').append(`<div class="preview-image-content"><img src="${include_path + imagePath}" alt="Prévia da imagem" /></div>`);
-
+            $('.preview-image').append(`<div class="preview-image-content"><img src="${include_path+'admin/'+imagePath}" alt="Prévia da imagem" /></div>`);
+            
             localStorage.setItem('editing', 'true');
             localStorage.setItem('post', data.row.post); // post html for the TinyMCE editor
 
-            if (actionData.formName != 'post') {
+            if(actionData.formName != 'post') {
                 $('.action-window form.edit input[type="submit"]').val('Atualizar');
             }
         });
     }
-
+    
     function changePassword(actionData) {
         actions.css('display', 'none');
         table.css('display', 'none');
         $('.action-window .title').text('Alterar senha');
         form.css('display', 'flex');
         form.html('');
-        form.removeClass('add');
+        form.removeClass('add'); 
         form.addClass('edit');
 
         $.ajax({
-            url: include_path + 'ajax/editForms.php',
+            url: include_path+'ajax/editForms.php',
             method: 'post',
             dataType: 'json',
             data: actionData
-        }).done(function (data) {
+        }).done(function(data) {
             form.append('<p class="form-message"></p>');
 
             form.append(`<div class="info">Usuário: ${data.row.user}</div>`);
@@ -214,14 +207,14 @@ $(function () {
     }
 
     function deleteField(actionData) {
-        if (confirm("Tem certeza que deseja excluir este campo?") == true) {
+        if(confirm("Tem certeza que deseja excluir este campo?") == true) {
             $.ajax({
-                url: include_path + 'ajax/editForms.php',
+                url: include_path+'ajax/editForms.php',
                 method: 'post',
                 dataType: 'json',
                 data: actionData
-            }).done(function (data) {
-                if (data.success) {
+            }).done(function(data) {
+                if(data.success) {
                     alert('Campo excluido com sucesso!');
                     dropdown.trigger('click');
                 } else {
@@ -231,12 +224,12 @@ $(function () {
         }
     }
 
-    $('li.action ul li a, li.mobile a').click(async function (e) {
+        $('li.action ul li a, li.mobile a').click(async function(e) {
         let dropdown = $(this);
 
         e.preventDefault();
-        $('header ul.dropdown').stop().slideUp(200);
-        if (isNavOpen) $('.menu-toggle').trigger('click');
+        $('header ul.dropdown').stop().slideUp(200); 
+        if(isNavOpen) $('.menu-toggle').trigger('click');
         $('.dashboard').css('display', 'none');
         $('.action-window').css('display', 'flex');
         $('.action-window .title').text($(this).text());
@@ -245,7 +238,7 @@ $(function () {
         let formName = '';
         let inputNames = [];
         let inputLabels = [];
-        switch (index) {
+        switch(index) {
             // add forms
             case 0:
                 formName = 'category';
@@ -277,10 +270,10 @@ $(function () {
 
         dropdown.attr('name', formName);
 
-        if (inputNames.length > 0) {
+        if(inputNames.length > 0) {
             // add forms
             form.removeClass('edit');
-            form.addClass('add');
+            form.addClass('add'); 
             form.css('display', 'flex');
             form.html('');
             form.append('<p class="form-message"></p>');
@@ -289,13 +282,13 @@ $(function () {
             for (let i = 0; i < inputNames.length; i++) {
                 // Criando uma div para cada input
                 let fieldDiv = $(`<div class="input-field"></div>`);
-
+        
                 if (inputNames[i] == 'title' || inputNames[i] == 'subtitle') {
                     fieldDiv.addClass(`${inputNames[i]}-field`);
                 }
-
+        
                 fieldDiv.append(`<label for="${inputNames[i]}" class="${inputNames[i]}">${inputLabels[i]}</label>`);
-
+        
                 if (inputNames[i] == 'category_id') {
                     // Adicionando o select para 'Categoria' em uma div separada
                     async function showCategories() {
@@ -319,12 +312,12 @@ $(function () {
                     // Adicionando inputs de arquivo para imagens em divs separadas
                     fieldDiv.append(`<input type="file" name="${inputNames[i]}" id="${inputNames[i]}" accept=".jpg, .jpeg, .png" class="image-input hidden" />`);
                     fieldDiv.append(`<div class="preview-image ${inputNames[i]}"><label for="${inputNames[i]}" class="image-label"><img src="assets/img/circle.png" alt="sla"/></label></div>`);
-
+        
                     // Mostrando a foto carregada
-                    fieldDiv.find(`input[name="${inputNames[i]}"]`).on('change', function (event) {
+                    fieldDiv.find(`input[name="${inputNames[i]}"]`).on('change', function(event) {
                         let src = URL.createObjectURL(event.target.files[0]);
                         let previewDiv = $(this).siblings('.preview-image');
-
+            
                         previewDiv.empty();
                         previewDiv.append(`<div class="preview-image-content"><img src="${src}" alt="Prévia da imagem" /></div>`);
                     });
@@ -332,7 +325,7 @@ $(function () {
                 } else if (inputNames[i] == 'email') {
                     // Input para e-mail em div separada
                     fieldDiv.append(`<input type="email" name="${inputNames[i]}" id="${inputNames[i]}" class="inputuser"/>`);
-                } else if (inputNames[i] == 'password') {
+                } else if(inputNames[i] == 'password') {
                     fieldDiv.append(`<input type="password" name="${inputNames[i]}" id="${inputNames[i]}" class="inputuser"/>`);
                 } else if (inputNames[i] == 'role') {
                     // Seleção de papel do usuário em div separada
@@ -353,11 +346,11 @@ $(function () {
                     // Inputs de texto normais em divs separadas
                     fieldDiv.append(`<input type="text" name="${inputNames[i]}" id="${inputNames[i]}" class="inputuser"/>`);
                 }
-
+        
                 // Adicionando a div do campo do formulário ao formulário principal
                 form.append(fieldDiv);
             }
-
+        
             // Textarea para postagem
             if (inputNames[0] == 'category_id') {
                 form.append('<label for="post">Postagem</label><textarea name="post" id="post"></textarea>');
@@ -366,59 +359,59 @@ $(function () {
                     selector: 'textarea#post',
                     height: 500,
                     plugins: [
-                        'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor',
-                        'pagebreak', 'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code',
-                        'fullscreen', 'insertdatetime', 'media', 'table', 'emoticons', 'template', 'help'
+                      'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor',
+                      'pagebreak', 'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code',
+                      'fullscreen', 'insertdatetime', 'media', 'table', 'emoticons', 'template', 'help'
                     ],
-                    toolbar: 'undo redo | styles | bold italic backcolor | ' +
-                        'alignleft aligncenter alignright alignjustify | ' +
-                        'bullist numlist outdent indent | link image media emoticons help',
+                    toolbar: 'undo redo | styles | bold italic backcolor | ' + 
+                      'alignleft aligncenter alignright alignjustify | ' +
+                      'bullist numlist outdent indent | link image media emoticons help',
                     menubar: 'edit view insert format tools table',
-                    file_picker_callback: function (callback, value, meta) {
-                        // Simplesmente criando um input de arquivo e clicando nele para selecionar a imagem
-                        var input = document.createElement('input');
-                        input.setAttribute('type', 'file');
-                        input.setAttribute('accept', 'image/*');
-
-                        input.onchange = function () {
-                            var file = this.files[0];
-
-                            var reader = new FileReader();
-                            reader.onload = function (e) {
-                                callback(e.target.result, {
-                                    alt: '' // Preencha com texto alternativo, se necessário
-                                });
-                            };
-                            reader.readAsDataURL(file);
+                    file_picker_callback: function(callback, value, meta) {
+                      // Simplesmente criando um input de arquivo e clicando nele para selecionar a imagem
+                      var input = document.createElement('input');
+                      input.setAttribute('type', 'file');
+                      input.setAttribute('accept', 'image/*');
+                  
+                      input.onchange = function() {
+                        var file = this.files[0];
+                  
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                          callback(e.target.result, {
+                            alt: '' // Preencha com texto alternativo, se necessário
+                          });
                         };
-
-                        input.click();
+                        reader.readAsDataURL(file);
+                      };
+                  
+                      input.click();
                     },
-                    setup: function (editor) {
-                        editor.on('init', function (e) {
-                            if (localStorage.getItem('editing') == 'true') {
-                                editor.setContent(localStorage.getItem('post'));
-                            }
-                        });
+                    setup: function(editor) {
+                      editor.on('init', function(e) {
+                        if(localStorage.getItem('editing') == 'true') {
+                          editor.setContent(localStorage.getItem('post'));
+                        }
+                      });
                     }
-                });
-
-
+                  });
+                  
+                  
             }
-
+            
             // name of the author of the post
             form.append(`<input type="hidden" name="author" value="${$('header h3 span').text()}" />`);
             // name of the form
             form.append(`<input type="hidden" name="form_name" value="${formName}" />`);
             // submit input (save draft for add post form)
-            if (formName == 'post') {
+            if(formName == 'post') {
                 form.append(`<input type="hidden" name="draft" />`);
                 form.append(`<div class="submit-btns"><input type="submit" value="Publicar" /><input type="submit" name="save_draft" value="Salvar rascunho" /></div>`);
             } else {
                 form.append(`<input type="submit" name="submit" value="Adicionar" />`);
             }
             // save post as a draft
-            $('input[name="save_draft"]').click(function () {
+            $('input[name="save_draft"]').click(function() {
                 $('input[name="draft"]').val('true');
             })
         } else {
@@ -431,15 +424,15 @@ $(function () {
             table.css('display', 'block');
             table.html('');
 
-            let postData = { formName: formName, user_id: $('input[name="user_id"]').val(), user_role: $('input[name="user_role"]').val() };
+            let postData = {formName: formName, user_id: $('input[name="user_id"]').val(), user_role: $('input[name="user_role"]').val()};
             async function showEditForms() {
                 return $.ajax({
-                    url: include_path + 'ajax/showEditForms.php',
+                    url: include_path+'ajax/showEditForms.php',
                     method: 'post',
                     dataType: 'json',
                     data: postData
-                }).done(function (data) {
-                    if (data.actions == undefined) {
+                }).done(function(data) {
+                    if(data.actions == undefined) {
                         $('.action-window .actions').css('display', 'none');
                     } else {
                         actions.append(data.actions);
@@ -450,17 +443,17 @@ $(function () {
             await showEditForms();
 
             actions.css('width', table.width());
-            $(window).on('resize', function () {
+            $(window).on('resize', function() {
                 actions.css('width', table.width());
             })
 
             // uncheck table checkboxes when clicking on a checkbox
             let selectedIndex = -1;
-            $('.action-window input[type="checkbox"]').click(function () {
-                if ($(this).prop('checked') == true) {
+            $('.action-window input[type="checkbox"]').click(function() {
+                if($(this).prop('checked') == true) {
                     let checkbox = $('.action-window input[type="checkbox"]');
                     selectedIndex = $(this).attr('value');
-                    for (let i = 0; i < checkbox.length; i++) {
+                    for(let i = 0; i < checkbox.length; i++) {
                         checkbox.eq(i).prop('checked', false);
                     }
                     $(this).prop('checked', true);
@@ -468,21 +461,21 @@ $(function () {
                     selectedIndex = -1;
                 }
             })
-
+ 
             $('body').off('click');
 
-            $('body').on('click', '.actions .action-btn a', function () {
-                if (selectedIndex < 0) {
+            $('body').on('click', '.actions .action-btn a', function() {
+                if(selectedIndex < 0) {
                     alert('Selecione um registro para editar ou excluir');
                     return false;
                 } else {
-                    let actionData = { formName: formName, actionName: $(this).attr('name'), index: selectedIndex };
+                    let actionData = {formName: formName, actionName: $(this).attr('name'), index: selectedIndex};
 
-                    if (actionData.actionName == 'edit') {
+                    if(actionData.actionName == 'edit') {
                         editField(actionData);
-                    } else if (actionData.actionName == 'edit-password') {
+                    } else if(actionData.actionName == 'edit-password') {
                         changePassword(actionData);
-                    } else if (actionData.actionName == 'delete') {
+                    } else if(actionData.actionName == 'delete') {
                         deleteField(actionData);
                     }
 
@@ -491,8 +484,8 @@ $(function () {
                 }
             })
 
-            $('body').on('click', 'table .action-btn a', function () {
-                let actionData = { formName: formName, actionName: $(this).attr('name'), index: $(this).attr('index') };
+            $('body').on('click', 'table .action-btn a', function() {
+                let actionData = {formName: formName, actionName: $(this).attr('name'), index: $(this).attr('index')};
                 editField(actionData);
                 return false;
             })
@@ -500,31 +493,31 @@ $(function () {
     })
 
     // edit profile on admin panel dashboard
-    $('body').on('click', '.profile-info .action-btn a', function () {
-        let actionData = { formName: 'user', actionName: $(this).attr('name'), index: $(this).attr('index'), dashboard: true };
+    $('body').on('click', '.profile-info .action-btn a', function() {
+        let actionData = {formName: 'user', actionName: $(this).attr('name'), index: $(this).attr('index'), dashboard: true};
         editField(actionData);
         return false;
     })
 
     // ajax add forms
-    $('body').on('submit', 'form.add', function (e) {
+    $('body').on('submit', 'form.add', function(e) {
         e.preventDefault();
         let formData = new FormData($('form.add')[0]);
 
         $.ajax({
-            url: include_path + 'ajax/addForms.php',
+            url: include_path+'ajax/addForms.php',
             method: 'post',
             dataType: 'json',
             processData: false,
             contentType: false,
             data: formData
-        }).done(function (data) {
-            if (data.success) {
+        }).done(function(data) {
+            if(data.success) {
                 alert('Campos adicionados com sucesso!');
                 $('form.add')[0].reset();
-                $(`.menu ul.dropdown li a[index=${index + 1}]`).trigger('click');
-                if (data.signup) {
-                    window.location.replace(include_path + 'admin/login.php');
+                $(`.menu ul.dropdown li a[index=${index+1}]`).trigger('click');
+                if(data.signup) {
+                    window.location.replace(include_path+'admin/login.php');
                 }
             } else {
                 alert(data.error);
@@ -533,23 +526,23 @@ $(function () {
     })
 
     // ajax edit (update) forms
-    $('body').on('submit', 'form.edit', function (e) {
+    $('body').on('submit', 'form.edit', function(e) {
         e.preventDefault();
         let formData = new FormData($('form.edit')[0]);
 
         $.ajax({
-            url: include_path + 'ajax/addForms.php',
+            url: include_path+'ajax/addForms.php',
             method: 'post',
             dataType: 'json',
             processData: false,
             contentType: false,
             data: formData
-        }).done(function (data) {
-            if (data.success) {
+        }).done(function(data) {
+            if(data.success) {        
                 alert('Campos modificados com sucesso!');
                 $('form.edit')[0].reset();
-                if (data.edit) index++;
-                if (data.dashboard) {
+                if(data.edit) index++;
+                if(data.dashboard) {
                     location.reload();
                 } else {
                     $(`.menu ul.dropdown li a[index=${index}]`).trigger('click');
@@ -563,27 +556,27 @@ $(function () {
     // dashboard charts
     let categoriesArr = [];
     $.ajax({
-        url: include_path + 'ajax/getCategories.php',
+        url: include_path+'ajax/getCategories.php',
         method: 'post',
         dataType: 'json'
-    }).done(function (data) {
-        for (let i = 0; i < data.categories.length; i++) {
+    }).done(function(data) {
+        for(let i = 0; i < data.categories.length; i++) {
             categoriesArr.push(data.categories[i].name);
         }
     });
 
     let numPosts = [];
     $.ajax({
-        url: include_path + 'ajax/getNumPosts.php',
+        url: include_path+'ajax/getNumPosts.php',
         method: 'post',
         dataType: 'json'
-    }).done(function (data) {
-        if (data.success) {
+    }).done(function(data) {
+        if(data.success) {
             numPosts = data.posts;
         }
     });
 
-    setTimeout(function () {
+    setTimeout(function() {
         new Chart($('#myChart1'), {
             type: 'pie',
             data: {
