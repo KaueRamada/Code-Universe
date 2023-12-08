@@ -562,22 +562,6 @@ section.content {
 
 /* Responsividade */
 
-@media screen and (max-width: 800px) {
-    /* .categories {
-        width: 100%;
-    } */
-    
-    .tec {
-        width: 26vw;
-        height: 26vw;
-    }
-    
-    .menu-plus .menu-itens .menu-item {
-        width: 20vw;
-        height: 20vw;
-    }
-}
-
 
 @media screen and (max-width: 1000px) {
     #footer .footer-content {
@@ -621,6 +605,15 @@ section.content {
 @media screen and (max-width: 768px) {
     .input-plus {
         margin-bottom: 30px;
+    }
+
+    .tec .span{
+        font-size: 12px;
+    }
+
+    .tec{
+        width: 18vw;
+        height: 18vw;
     }
 }
 
@@ -701,6 +694,11 @@ section.content {
     .row-img div:hover .text {
         font-size: 18px;
     }
+
+    .tec{
+        width: 22vw;
+        height: 22vw;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -728,6 +726,10 @@ section.content {
     .content {
         height: 180vh;
     }
+
+    .tec .span{
+        font-size: 10px;
+    }
 }
 
 @media screen and (max-width: 375px) {
@@ -747,6 +749,18 @@ section.content {
     .row-img div:hover .text {
         font-size: 16px;
     }
+
+    .tec{
+        width: 25vw;
+        height: 25vw;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .tec{
+        width: 27vw;
+        height: 27vw;
+    }
 }
 
 @media screen and (max-width: 270px) {
@@ -758,6 +772,7 @@ section.content {
         font-size: 8px;
     }
 }
+
 
 /* Loader */
 .loader-container {

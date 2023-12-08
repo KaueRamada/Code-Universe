@@ -13,14 +13,6 @@ require_once '../config/config.php';
 </head>
 
 <body>
-    <div class="loader-container">
-        <div class="loader">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-        </div>
-    </div>
     <?php
     // login verification
     $error = false;

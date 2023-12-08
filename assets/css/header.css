@@ -9,7 +9,7 @@ nav ul .content-itens li:nth-child(3) {
 }
 
 nav img.logo {
-    width: 20vw;
+    width: 170px;
     position: absolute;
     cursor: pointer;
     left: 20px;
@@ -454,7 +454,7 @@ li:last-child a:hover+ul.dropdown {
     }
 
     nav img.logo {
-        width: 22vw;
+        width: 150px;
     }
 
     .navbar i {
@@ -547,7 +547,7 @@ li:last-child a:hover+ul.dropdown {
 
 @media screen and (max-width: 550px) {
     nav img.logo {
-        width: 30vw;
+        width: 140px;
     }
 
     .menu-mobile {
